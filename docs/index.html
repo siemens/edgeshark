@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Edgeshark manual">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="shortcut icon" type="image/ico" href="_media/edgeshark.ico" />
+  <link rel="manifest" href="_media/manifest.json" crossorigin="use-credentials" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@3/dist/docsify-themeable/style.min.css"
+    type="text/css">
+
+  <!-- docsify-themeable styles-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"
+    title="light">
+  <link rel="stylesheet alternative"
+    href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" title="dark">
+</head>
+<style>
+  :root {
+    --theme-color: #009999;
+    --heading-color: var(--theme-color);
+    --link-text-decoration-color: var(--theme-color);
+    --external-link-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='%23000000'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z'/%3E%3C/svg%3E");
+  }
+
+  .mdicon {
+    position: relative;
+    top: 0.2ex;
+    vertical-align: text-bottom;
+    height: 2.5ex;
+    filter: invert(1) brightness(0.3);
+  }
+
+  /* adorn external links */
+  a[target="_blank"]:not(.github-corner):not(.noext)::after {
+    display: inline-block;
+    content: '';
+    background: no-repeat var(--external-link-icon);
+    background-size: 100% 100%;
+    width: 1.75ex;
+    height: 1.75ex;
+    vertical-align: text-bottom;
+    margin-left: 0.05em;
+    margin-right: 0.1em;
+    margin-bottom: 0.3ex;
+    filter: invert(1) brightness(0.3);
+    /* theming hack */
+  }
+
+  /* 
+     * Now this is what might be called a CSS hack: we have to deal with
+     * changing the fill/stroke colors of SVG icons that have been inlined using
+     * img tags, not the SVG markup itself. The docsify-darklight plugin stores
+     * the information about the light/dark theme selection on its switch
+     * button, which is a sibling(!) of the content including our
+     * icons-to-be-themed. So we need to select either on the dark or light
+     * theme, and then use the subsequence-sibling combinator. Ugly.
+     */
+  #docsify-darklight-theme[data-link-title="dark"]~* .mdicon {
+    filter: invert(1) brightness(0.82);
+  }
+
+  img.mascot {
+    float: right;
+    position: relative;
+    top: -3ex;
+  }
+
+  img.scrshot {
+    font-family: var(--base-font-family);
+    font-size: var(--base-font-size);
+    max-width: 100%;
+  }
+
+  img.teaser {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--mono-tint1);
+    border-radius: 0.5ex;
+    width: 10em;
+  }
+
+  div.docsify-pagination-container {
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+  }
+
+  .pagination-item {
+    margin-top: 2em;
+  }
+
+  /* 
+     * fixes (or rather hacks) the rather unfortunate contrasting corner icon
+     * coloring of the gitlab icon
+     */
+  .github-corner>svg> :nth-child(2) {
+    fill: var(--base-background-color);
+  }
+
+  /* fixes docsify-darklight theme switch positioning. */
+  #docsify-darklight-theme {
+    right: 25px;
+    /* same as element width */
+  }
+</style>
+
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'Edgeshark',
+      repo: 'true',
+      homepage: 'introduction.md',
+      loadSidebar: true,
+
+      auto2top: true,
+      maxLevel: 3,
+      subMaxLevel: 3,
+
+      loadFooter: true,
+
+      'flexible-alerts': {
+        style: 'callout',
+      },
+
+      corner: {
+        url: "https://github.com/siemens/edgeshark",
+        // the default preset icon in docsify-corner  
+        icon: "github",
+      },
+
+      pagination: {
+        crossChapter: true,
+        crossChapterText: true,
+      },
+
+      search: {
+        maxAge: 86400000, // Expiration time, the default one day
+        paths: 'auto',
+        placeholder: 'Type to search',
+        noData: 'No results',
+        depth: 6,
+        hideOtherSidebarContent: false,
+        namespace: 'edgeshark',
+      },
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-corner/dist/docsify-corner.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@3/dist/docsify-themeable/main.min.js"
+    type="text/javascript"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@3/dist/docsify-themeable/index.min.js"
+    type="text/javascript"></script>
+</body>
+
+</html>

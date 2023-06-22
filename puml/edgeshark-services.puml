@@ -1,0 +1,32 @@
+@startuml edgeshark-services
+top to bottom direction
+hide empty fields
+hide empty methods
+
+() ":443/edgeshark" as proxyes
+() ":5001" as es
+
+node IED {
+    
+    component Edgeshark {
+
+        component Packetflix
+        () ":5001" as pfapi
+        pfapi - Packetflix
+
+        component Gostwire
+        () ":5000" as gwapi
+        Packetflix .> gwapi
+        gwapi - Gostwire
+
+    }
+
+    component "reverse proxy" as rp
+
+}
+
+es ..> pfapi : <<forwards>>
+proxyes -- rp
+rp .> pfapi : <<forwards>>
+
+@enduml
