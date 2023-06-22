@@ -10,10 +10,25 @@ network traffic.
 
 Siemens Industrial Edge users can simply deploy the Edgeshark App.
 
-For "plain" stand-alone container hosts, deploy the
-[Ghostwire](https://github.com/siemens/ghostwire) and
-[Packetflix](https://github.com/siemens/packetflix) using their respective
-Docker composer deployment files.
+## Plain (Docker) Container Host
+
+We provide multi-architecture Docker images for linux/amd64 and linux/arm64.
+First, ensure that you have the Docker compose plugin v2 installed. For Debian
+users it is strongly recommended to install docker-ce instead of docker.io
+packages, as these are updated on a regular basis.
+
+```bash
+wget -q --no-cache -O - \
+  https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose.yaml \
+  | docker compose -f - up
+```
+
+Finally, visit http://localhost:5001 and start looking around your container
+host virtual networking.
+
+> [!WARNING] This quick start deployment will **expose TCP port 5001** also to
+> clients external to your host. Make sure to have proper network protection in
+> place.
 
 ## Industrial Edge App
 

@@ -6,7 +6,7 @@
 
 # Edgeshark
 
-[![Manual](https://img.shields.io/badge/Edgeshark-manual-blue)](https://siemens.github.com/edgeshark)
+[![Manual](https://img.shields.io/badge/Edgeshark-manual-blue)](https://siemens.github.io/edgeshark)
 
 Discover the virtual communication of containers in
 ([Docker](https://docker.com)) container hosts, such as the [Siemens Industrial
@@ -32,8 +32,8 @@ wget -q --no-cache -O - \
   | docker compose -f - up
 ```
 
-Finally, visit http://localhost:5001 and start looking around Linux kernel
-namespaces, as well as mount points with their hierarchies.
+Finally, visit http://localhost:5001 and start looking around your container
+host virtual networking.
 
 > ⚠ This quick start deployment will **expose TCP port 5001** also to clients
 > external to your host. Make sure to have proper network protection in place.
