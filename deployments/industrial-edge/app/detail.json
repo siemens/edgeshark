@@ -1,0 +1,18 @@
+{
+  "versionNumber": "",
+  "versionId": "",
+  "title": "Edgeshark",
+  "appId": "4d8ed70e23514b15b4d9912eeb518131",
+  "restRedirectUrl": "",
+  "redirectSection": "edgeshark",
+  "redirectUrl": "edgeshark/",
+  "redirectType": "FromBoxReverseProxy",
+  "description": "Discover and capture the virtual networking of your containers in your SIEMENS Industrial Edge devices.\n\nSee the virtual \"wiring\" and network configuration in your web browser. For instance, your container's IP and MAC addresses, their IP routing, and DNS configuration.\n\nEasily capture your container network traffic with the SIEMENS Edgeshark plugin for the Wireshark network capture program. Simply install the Edgeshark plugin on your desktop system (Windows and Linux) and you are ready to capture. In the plugin, you see the containers running on your Industrial Edge device. Just click on the container you want to capture from.\n\nNo fiddling around with low-level Linux CLI tools, or baking capture tools into your containers for diagnosis.",
+  "swarmModeEnable": false,
+  "required": [],
+  "releaseNotes": "",
+  "signUpType": "None",
+  "externalConfigurator": false,
+  "externalUrl": "",
+  "isAppSecure": false
+}
