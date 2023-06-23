@@ -12,9 +12,3 @@ icons: ## generate optimized SVG icons for documentation from icons/_media/... (
 		echo "..." $${d} "-->" $${d#*/}; \
 		svgo -f $${d} -o docs/$${d#*/}; \
 	done
-
-deploy: ## deploy the Edgeshark service
-	docker-compose -p edgeshark -f deployments/edgeshark/docker-compose.yaml up
-
-undeploy: ## stop and remove the Edgeshark service
-	docker-compose -p edgeshark -f deployments/edgeshark/docker-compose.yaml down
