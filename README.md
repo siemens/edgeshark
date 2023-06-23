@@ -21,6 +21,11 @@ manual](https://siemens.github.io/edgeshark).
 
 ## Quick Start
 
+- plain [Docker Host](#docker-host)
+- [Siemens Industrial Edge](#siemens-industrial-edge)
+
+### Docker Host
+
 We provide multi-architecture Docker images for `linux/amd64` and `linux/arm64`.
 First, ensure that you have the Docker _compose_ plugin v2 installed. For Debian
 users it is strongly recommended to install docker-ce instead of docker.io
@@ -37,6 +42,17 @@ host virtual networking.
 
 > ⚠ This quick start deployment will **expose TCP port 5001** also to clients
 > external to your host. Make sure to have proper network protection in place.
+
+### Siemens Industrial Edge
+
+Please head over to our
+[releases](https://github.com/siemens/edgeshark/releases) page to download the
+latest (and greatest) Edgeshark app:
+
+1. download the `edgeshark.zip` file.
+2. unpack the downloaded ZIP archive.
+3. import the `edgeshark.app` file into the catalog of your IEM.
+4. deploy ... and enjoy!
 
 ## Project Structure
 
