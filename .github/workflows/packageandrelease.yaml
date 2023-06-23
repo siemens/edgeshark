@@ -24,12 +24,13 @@ jobs:
         run: |
           go run github.com/thediveo/tiap/cmd/tiap@v0.9.7 \
             deployments/industrial-edge/app \
-            --out edgeshark.ieapp \
+            --out edgeshark.app \
             --app-version ${{github.ref_name}}
+          zip edgeshark.zip edgeshark.app
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            edgeshark.ieapp
+            edgeshark.zip
             LICENSE
