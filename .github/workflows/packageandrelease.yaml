@@ -26,7 +26,7 @@ jobs:
             deployments/industrial-edge/app \
             --out edgeshark.app \
             --app-version ${{github.ref_name}}
-          zip edgeshark.zip edgeshark.app
+          zip edgeshark.zip edgeshark.app LICENSE
 
       - name: Release
         uses: softprops/action-gh-release@v1
