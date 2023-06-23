@@ -8,6 +8,9 @@
 
 [![Manual](https://img.shields.io/badge/Edgeshark-manual-blue)](https://siemens.github.io/edgeshark)
 
+[![wiring](images/thumb-wiring.png)](docs/_images/teaser-wiring.png)
+[![communication details](images/thumb-comm-details.png)](docs/_images/teaser-comm-details.png)
+
 Discover the virtual communication of containers in
 ([Docker](https://docker.com)) container hosts, such as the [Siemens Industrial
 Edge](https://github.com/industrial-edge). And capture container traffic live
@@ -67,26 +70,12 @@ The "Edgeshark" project consist of several repositories:
   - [mobydig](https://github.com/siemens/mobydig)
   - [ieddata](https://github.com/siemens/ieddata)
 
-## App Deployment
+## Working on the Manual
 
-> **Note:** The Edgeshark project is working on providing automatically built
-> `.app` artifacts. We unfortunately cannot do so at this time as there are
-> `iectl` issues that block automated builds on Github. 
-
-In case you want to deploy Edgeshark on any Docker host, simply head over to the
-[Ghostwire](https://github.com/siemens/ghostwire) and
-[Packetflix](https://github.com/siemens/packetflix) repositories and deploy
-these services running `make deploy` inside the toplevel repository directories.
-
-In case you want to build the Edgeshark Industrial Edge app yourself: deployment
-files are located in `deployments/industrial-edge/` in this repository.
-
-## Manual
-
-The manual uses [docsify](https://docsify.js.org/) so there is no need for
-processing the documentation files first. Instead, they can be directly copied
-to a place from where they can be served as-is, such as the [Edgeshark live
-manual on github.com](https://github.io/siemens/edgeshark).
+The Edgeshark manual uses [docsify](https://docsify.js.org/) so there is no need
+for processing the documentation files first. Instead, they can be directly
+copied one-to-one to a place from where they can be served as-is, such as the
+[Edgeshark live manual on github.com](https://siemens.github.io/edgeshark).
 
 When working on the documentation, simply serve the manual artifacts as-is in
 order to see an automatically updating live "preview" (which actually is quite
