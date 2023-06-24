@@ -4,7 +4,7 @@ services:
     image: 'ghcr.io/siemens/ghostwire:2.1.7'
     read_only: true
     mem_limit: 48mb
-    restart: always
+    restart: unless-stopped
     entrypoint:
       - /gostwire
       - '--http=[::]:5000'
@@ -37,7 +37,7 @@ services:
     image: 'ghcr.io/siemens/packetflix:0.9.1'
     mem_limit: 32mb
     read_only: true
-    restart: always
+    restart: unless-stopped
     entrypoint:
       - /packetflix
       - '--port=5001'
