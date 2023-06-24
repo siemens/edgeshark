@@ -50,7 +50,7 @@ host virtual networking.
 
 Please head over to our
 [releases](https://github.com/siemens/edgeshark/releases) page to download the
-latest (and greatest) Edgeshark app:
+latest (and greatest) Edgeshark app (amd64 only at this time):
 
 1. download the `edgeshark.zip` file.
 2. unpack the downloaded ZIP archive.

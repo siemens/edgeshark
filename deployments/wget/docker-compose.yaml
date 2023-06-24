@@ -1,12 +1,13 @@
 # requires docker compose plugin (=v2)
 #
-# wget -q -O - https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose.yaml | docker compose -f - up
+# wget -q --no-cache -O - https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose.yaml | docker compose -f - up
 name: 'edgeshark'
 services:
     gostwire:
-        image: ghcr.io/siemens/ghostwire
+        image: 'ghcr.io/siemens/ghostwire'
+        pull_policy: always
+        restart: 'unless-stopped'
         read_only: true
-        restart: always
         entrypoint:
         - "/gostwire"
         - "--http=[::]:5000"
@@ -42,9 +43,10 @@ services:
                 priority: 100
 
     edgeshark:
-        image: ghcr.io/siemens/packetflix
+        image: 'ghcr.io/siemens/packetflix'
+        pull_policy: 'always'
         read_only: true
-        restart: always
+        restart: 'unless-stoppped'
         entrypoint:
         - "/packetflix"
         - "--port=5001"
