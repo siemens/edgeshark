@@ -46,7 +46,7 @@ services:
         image: 'ghcr.io/siemens/packetflix'
         pull_policy: 'always'
         read_only: true
-        restart: 'unless-stoppped'
+        restart: 'unless-stopped'
         entrypoint:
         - "/packetflix"
         - "--port=5001"
