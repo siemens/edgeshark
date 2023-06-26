@@ -46,6 +46,10 @@ host virtual networking.
 > ⚠ This quick start deployment will **expose TCP port 5001** also to clients
 > external to your host. Make sure to have proper network protection in place.
 
+If you want to live capture traffic using Wireshark, please [download the csharg
+extcap plugin](https://github.com/siemens/cshargextcap/releases) for the
+OS/distribution and install it. 
+
 ### Siemens Industrial Edge
 
 Please head over to our
@@ -56,6 +60,10 @@ latest (and greatest) Edgeshark app (amd64 only at this time):
 2. unpack the downloaded ZIP archive.
 3. import the `edgeshark.app` file into the catalog of your IEM.
 4. deploy ... and enjoy!
+
+If you want to live capture traffic using Wireshark, please [download the csharg
+extcap plugin](https://github.com/siemens/cshargextcap/releases) for the
+OS/distribution and install it. 
 
 ## Project Structure
 
