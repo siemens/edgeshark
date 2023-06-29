@@ -24,7 +24,8 @@ manual](https://siemens.github.io/edgeshark).
 
 ## Quick Start
 
-- plain [Docker Host](#docker-host)
+- plain [Docker Host](#docker-host) with `docker compose` v2
+- plain [Docker Host Without Composer](#docker-host-without-composer) without Docker composer
 - [Siemens Industrial Edge](#siemens-industrial-edge)
 
 ### Docker Host
@@ -49,6 +50,14 @@ host virtual networking.
 If you want to live capture traffic using Wireshark, please [download the csharg
 extcap plugin](https://github.com/siemens/cshargextcap/releases) for the
 OS/distribution and install it. 
+
+### Docker Host Without Composer
+
+```bash
+wget -q --no-cache -O - \
+  https://github.com/siemens/edgeshark/raw/main/deployments/nocomposer/edgeshark.sh \
+  | bash -s up
+```
 
 ### Siemens Industrial Edge
 
