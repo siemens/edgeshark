@@ -25,7 +25,7 @@ manual](https://siemens.github.io/edgeshark).
 ## Quick Start
 
 - plain [Docker Host](#docker-host) with `docker compose` v2
-- plain [Docker Host Without Composer](#docker-host-without-composer) without Docker composer
+- plain [Docker Host Without Composer](#docker-host-without-composer) – just Docker and bash.
 - [Siemens Industrial Edge](#siemens-industrial-edge)
 
 ### Docker Host
@@ -52,6 +52,9 @@ extcap plugin](https://github.com/siemens/cshargextcap/releases) for the
 OS/distribution and install it. 
 
 ### Docker Host Without Composer
+
+Alternatively, a bash script can be used to bring the Edgeshark services up or
+down, without needing an installed docker compose plugin.
 
 ```bash
 wget -q --no-cache -O - \
