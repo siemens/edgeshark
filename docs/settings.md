@@ -50,18 +50,24 @@ so-called "bind mounts".)
 ## Detail Sections Default Expansion
 
 The detail information about the communication of a virtual IP stack is divided
-into logical sections: container details, TCP/UDP transport ports, IP stack
-routes, and network interface addresses. As the information at least in some
-sections can get quite large, users might want to set their preferences as to
-when to collapse or expand the individual sections, based on the amount of
-information present.
+into logical sections:
+- [container (containee) details](details#containerscontainees),
+- [neighborhood services](details#neighborhood-services) (Docker only),
+- forwarded TCP/UDP ports,
+- [TCP/UDP transport ports](details#transport),
+- [IP stack routes](details#routing),
+- [network interfaces configuration](details#interface-configuration).
+
+As the information at least in some sections can get quite large, users might
+want to set their preferences as to when to collapse or expand the individual
+sections, based on the amount of information present.
 
 In general, user can control for each individual section:
 
-- always show collapsed (minimized),
-- always show expanded,
-- up to a threshold of 1-5, 10, 20, or 30 items expand the section, if above the
-  threshold then show the section collapsed.
+- **always show collapsed** (minimized),
+- **always show expanded**,
+- up to a **threshold** of 1-5, 10, 20, or 30 items expand the section, if above
+  the threshold then show the section collapsed.
 
 ## Siemens Industrial Edge
 
