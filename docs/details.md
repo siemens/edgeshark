@@ -141,6 +141,52 @@ the current location.
 > of current location container's virtual IP stack, it doesn't require any DNS
 > and IP tools (such as dig and ping) to be installed into containers.
 
+## Port Forwarding
+
+This section lists the TCP and UDP ports forwarded inside this specific
+(virtual) IP stack (network namespace). More precisely, this table covers TCP
+and UDP ports that undergo "destination NAT"
+([dNAT](https://en.m.wikipedia.org/wiki/Network_address_translation#DNAT)) for
+incoming packets, as well as the inverse translation for any replies.
+
+> [!NOTE] Please keep **port forwarding** apart from **source NAT**
+> ([sNAT](https://en.m.wikipedia.org/wiki/Network_address_translation#SNAT))
+> that instead covers traffic originating from a non-globally routable container
+> IP address and thus needs its source IP address replaced with one of the
+> host's externally facing IP addresses.
+
+**Edgeshark**'s port forwarding table covers both TCP and UDP ports forwarded
+using packet filter operations as well as via user-space [`docker-proxy`
+processes](https://windsock.io/the-docker-proxy/).
+
+In particular, **Edgeshark** detects (only)
+**[netfilter](https://en.m.wikipedia.org/wiki/Netfilter)-managed** packet
+mangling rules. However, as all relevant Linux distributions already have
+migrated to the netfilter framework years ago, this should not come as a real
+restriction. Interestingly, while Docker itself doesn't directly integrate with
+netfilter, it gets integrated via netfilter's iptables legacy integration layer.
+
+Edgeshark automatically detects **user-space [`docker-proxy` port forwarding
+processes](https://windsock.io/the-docker-proxy/)** that are [required under
+certain conditions](https://stackoverflow.com/a/49070640) for correctly
+forwarding traffic coming from a container into another container via (local)
+host port forwarding. These forwarded ports are aggregated with the ports
+discovered from packet-mangling rules and in particular, they are _not
+separately identified_.
+
+The port forwarding table not only shows the IP addresses and ports TCP and UDP
+ports get forwarded to, but additionally the containers/containees serving these
+ports.
+
+> [!NOTE] Docker users might notice TCP and UDP ports 53 getting forwarded
+> inside their containers soleley on the loopback address `127.0.0.11`. These
+> ports belong to Docker's embedded DNS service that resolves container and
+> service DNS names locally. In consequence, these forwarded ports are handled
+> by the `dockerd` daemon itself. These DNS service-related port forwardings are
+> only present if a container is attached to at least one custom (user-defined)
+> network, but not when a container is only attached to the `docker0`
+> default/legacy network.
+
 ## Transport
 
 This section is a special feature of Edgeshark (kind of

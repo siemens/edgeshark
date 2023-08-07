@@ -2,10 +2,14 @@
 
 ![Edgeshark logo](_images/edgeshark.png ':no-zoom :size=100 :class=mascot')
 
-**Edgeshark** helps in diagnosing and optionally capturing the communication
-between containers and with their outside world in Linux stand-alone container
-hosts and KinD deployments. Not least, Edgeshark can easily be deployed to
-[Siemens Industrial
+> Quick, just get me 🚀&nbsp;**[started](getting-started)!**
+
+**Edgeshark** visualizes the communication of containers and thus helps in
+diagnosing it, both in-between containers as well as with the "outside world".
+It can be deployed to Linux stand-alone container hosts, including
+[KinD](https://kind.sigs.k8s.io/) deployments. Edgeshark also supports capturing
+container traffic using [Wireshark](https://wireshark.org). Another natural
+habitat of Edgeshark are [Siemens Industrial
 Edge](https://new.siemens.com/global/en/products/automation/topic-areas/industrial-edge.html)
 devices.
 

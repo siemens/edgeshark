@@ -6,6 +6,7 @@
   * [Navigation](sidebar-navigation)
   * [Discovery](discovery)
   * [Wiring View](wiring)
+  * [Open & Forwarding Host Ports](open-house)
   * [Detail View](details)
   * [System Info](systeminfo)
   * [Snapshot](snapshot)
