@@ -1,7 +1,7 @@
 version: '2.4'
 services:
   gostwire:
-    image: 'ghcr.io/siemens/ghostwire:2.1.11'
+    image: 'ghcr.io/siemens/ghostwire:2.1.12'
     read_only: true
     mem_limit: 48mb
     restart: unless-stopped
