@@ -28,7 +28,7 @@ Edgeshark services:
 
 ```bash
 wget -q --no-cache -O - \
-  https://github.com/siemens/edgeshark/raw/main/deployments/nocomposer/edgeshark.sh \
+  https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose.yaml \
   | docker compose -f - up
 ```
 
@@ -46,7 +46,7 @@ simple fallback using a plain `bash` script.
 
 ```bash
 wget -q --no-cache -O - \
-  https://github.com/siemens/edgeshark/raw/main/deployments/bash/docker-compose.yaml \
+  https://github.com/siemens/edgeshark/raw/main/deployments/nocomposer/edgeshark.sh \
   | bash -s up
 ```
 
