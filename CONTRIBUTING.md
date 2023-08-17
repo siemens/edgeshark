@@ -13,7 +13,7 @@
 ## Do you want to contribute code?
 
 Thanks for your interest in contributing. Anybody is free to propose any changes
-to this repository using Merge Requests. We appreciate every Merge Request, but
+to this repository using Pull Requests. We appreciate every Pull Request, but
 merging cannot be guaranteed. Before you submit your code, please check the
 following prerequisites: 
  
@@ -30,7 +30,11 @@ following prerequisites:
       bugs)
     * use `git rebase -i` to restructure a patch series
 * test patches sufficiently (obvious, but...) [**required**]
-* you have to sign the [CLA](Siemens_CLA_1.1.pdf) which is provided in the
-  repository and send it via email.
+* after creating a Pull Request: if you haven't signed the [Siemens Contributor
+  License Agreement
+  (CLA)](https://github.com/siemens/.github/blob/main/cla/cla.md) in the past,
+  you'll be automatically asked as part of your PR to sign it online at the
+  specified URL. After you've signed the CLA, your PR will automatically be
+  cleared for merging if all other test stages succeed.
 
 ## Thank you!
