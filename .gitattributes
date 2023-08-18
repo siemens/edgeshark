@@ -1,2 +1,4 @@
 # https://github.com/github-linguist/linguist/blob/master/docs/overrides.md#documentation
 docs/** -linguist-documentation
+*.md linguist-documentation=false
+*.md linguist-detectable
