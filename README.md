@@ -35,17 +35,27 @@ First, ensure that you have the Docker _compose_ plugin v2 installed. For Debian
 users it is strongly recommended to install docker-ce instead of docker.io
 packages, as these are updated on a regular basis.
 
+To expose service TCP port 5001 only on localhost:
+
+```bash
+wget -q --no-cache -O - \
+  https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose-localhost.yaml \
+  | docker compose -f - up
+```
+
+To expose service TCP port 5001 to remote clients:
+
 ```bash
 wget -q --no-cache -O - \
   https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose.yaml \
   | docker compose -f - up
 ```
 
-Finally, visit http://localhost:5001 and start looking around your container
-host virtual networking.
-
 > ⚠ This quick start deployment will **expose TCP port 5001** also to clients
 > external to your host. Make sure to have proper network protection in place.
+
+Finally, visit http://localhost:5001 and start looking around your container
+host virtual networking.
 
 If you want to live capture traffic using Wireshark, please [download the csharg
 extcap plugin](https://github.com/siemens/cshargextcap/releases) for the

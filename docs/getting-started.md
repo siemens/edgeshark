@@ -28,12 +28,21 @@ Edgeshark services:
 
 ```bash
 wget -q --no-cache -O - \
-  https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose.yaml \
+  https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose-localhost.yaml \
   | docker compose -f - up
 ```
 
 Finally, visit http://localhost:5001 and start looking around your container
 host virtual networking.
+
+In case you need to expose service TCP port 5001 to external clients then copy,
+paste, and execute this command instead:
+
+```bash
+wget -q --no-cache -O - \
+  https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose.yaml \
+  | docker compose -f - up
+```
 
 > [!WARNING] This quick start deployment will **expose TCP port 5001** also to
 > clients external to your host. Make sure to have proper network protection in
