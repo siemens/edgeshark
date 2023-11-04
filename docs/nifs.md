@@ -11,16 +11,28 @@ varieties:
    "vNICs", virtual network interface cards.)
 
 2. everything else are **virtual** network interfaces in the narrower meaning of
-   the Linux kernel have **direct kernel built-in support**, so no "hardware
-   driver". Some examples of virtual network interfaces are bridges, virtual
-   Ethernet "cable ends" (which only come in pairs), and overlay networks.
+   the Linux kernel with **direct kernel built-in support**, so they don't have
+   any "hardware driver". Some examples of virtual network interfaces are
+   bridges, virtual Ethernet "cable ends" (which only come in pairs), and
+   overlay networks.
 
 ## Physical Network Interfaces
 
-Edgeshark marks hardware/physical network interfaces (including vNICs) with ![HW
-network interface](_media/icons/nifs/HardwareNic.svg ':class=mdicon :no-zoom').
-Please note that Edgeshark does not differentiate different types of hardware
-network interfaces and simply uses a unified "cable" icon for identification.
+Edgeshark marks hardware/physical network interfaces (including vNICs) normally
+with ![HW network interface](_media/icons/nifs/HardwareNic.svg ':class=mdicon
+:no-zoom'). Please note that Edgeshark does not differentiate different media
+types and vendors of hardware network interfaces and simply uses a unified
+"cable" icon for identification.
+
+The only exception are SR-IOV network interfaces; here, Edgeshark will detect
+and indicate whether an SR-IOV network interface is a so-called _physical
+function_ (PF) or _virtual function_ (VF).
+
+| Network Interface | Type | Description |
+| --- | --- | --- |
+| ![HW](_media/icons/nifs/HardwareNic.svg ':class=mdicon :no-zoom') | **"hardware"** | a network interface with a "hardware" kernel driver. This includes virtualized NIC hardware, such as used with hypervisors. |
+| ![PF](_media/icons/nifs/HardwareNicPF.svg ':class=mdicon :no-zoom') | **PF** | an [SR-IOV](https://en.wikipedia.org/wiki/Single-root_input/output_virtualization) _physical function_ (PF) network interface. |
+| ![VF](_media/icons/nifs/HardwareNicVF.svg ':class=mdicon :no-zoom') | **VF** | an [SR-IOV](https://en.wikipedia.org/wiki/Single-root_input/output_virtualization) _virtual function_ (PF) network interface. |
 
 ## Virtual Network Interfaces
 
@@ -34,7 +46,10 @@ on the type of virtual network interface:
 | ![VETH](_media/icons/nifs/Veth.svg ':class=mdicon :no-zoom') | **VETH** | one of exactly two virtual Ethernet network interfaces connected to each other. |
 | ![MACVLAN](_media/icons/nifs/Macvlan.svg ':class=mdicon :no-zoom') | **MACVLAN** | an additional "virtual LAN" card to a hardware/physical network interface. The term "VLAN" might be totally misleading, as a MACVLAN network interface is not a separate VLAN in the IEEE 802 sense, but instead adds a separate MAC address on an existing hardware/physical network interface and handles its traffic through this separate network interface. |
 | ![MACVLAN master](_media/icons/nifs/MacvlanMaster.svg ':class=mdicon :no-zoom') | (**MACVLAN master**) | a hardware/physical network interface to which one or more MACVLAN network interfaces have been added (attached). This is signalled by an Ethernet plug and cable, but with side branches going off to the left and right. |
+| ![TAP](_media/icons/nifs/Tap.svg ':class=mdicon :no-zoom') | **TAP** | a virtual Ethernet network interface that [sends and receives _Ethernet frames_ to and from one or multiple user space processes](https://www.kernel.org/doc/html/v5.8/networking/tuntap.html). |
+| ![TUN](_media/icons/nifs/Tun.svg ':class=mdicon :no-zoom') | **TUN** | a virtual network interface that [sends and receives _IP packets_ to and from one or multiple user space processes](https://www.kernel.org/doc/html/v5.8/networking/tuntap.html). |
 | ![VxLAN](_media/icons/nifs/Overlay.svg ':class=mdicon :no-zoom') | **VxLAN** | an overlay network interface for [virtual extensible LANs](https://en.wikipedia.org/wiki/Virtual_Extensible_LAN): it carries Ethernet traffic via UDP/IP datagrams. |
+| ![Dummy](_media/icons/nifs/Dummy.svg ':class=mdicon :no-zoom') | **dummy** | a virtual network interface simply drops any frames/packets it is told to send and never receives anything; it is often used for testing purposes or to sink all traffic destined to it. |
 
 ## Operational State
 
