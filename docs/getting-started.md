@@ -5,7 +5,7 @@
 1. two containerized 🛎 services named
    [Ghostwire](https://github.com/siemens/ghostwire) and
    [Packetflix](https://github.com/siemens/packetflix),
-2. as  well as an _optional_ Wireshark ⚙️ [csharg external capture
+2. and an _optional_ Wireshark ⚙️ [csharg external capture
    plugin](https://github.com/siemens/cshargextcap) for live remote capture of
    network traffic.
 

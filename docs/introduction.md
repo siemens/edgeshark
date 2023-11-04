@@ -44,18 +44,20 @@ capture](https://github.com/siemens/cshargextcap) plugin from inside Wireshark.
 
 ## Features
 
-With Edgeshark, the information displayed reflects the **active system state**
-and not _some_ engineered (and sometimes ignored) configuration data somewhere
-on disk.
+The general idea of Edgeshark is to display the **real system state**, and not
+_some_ engineered configuration data from somewhere on disk.
+
+Alas, Edgeshark features:
 
 - UI with light/dark theme switcher (in [settings](settings)) and [integrated
   multi-chapter help](sidebar-help) (accessible through side bar, click or tap
   on ![menu](_media/icons/Menu.svg ':class=mdicon :no-zoom') symbol).
-- "[wiring](wiring)" view of the (virtual) network data-link layer.
+- a "[wiring](wiring)" view of the (virtual) network data-link layer.
 - [detail](details) views for individual app containers or the host:
   - IP and MAC address, as well as IP routing configuration of host and app
     containers.
   - DNS configuration of host and app containers, including online validation.
+- the [open & forwarded host ports](open-house).
 - system information about host OS and Industrial Edge runtime.
 - (experimental) shows IE App icons for quick visual identification. (needs to
   be [enabled in Settings](settings?id=siemens-industrial-edge) first)
@@ -70,8 +72,9 @@ on disk.
 - remote capture with app container-awareness that can be started just with a
   click/touch from the UI.
 - REST/websocket service API for discovery and capture.
-- and finally: powered by ghosts, _not spectres_ ... lately with the help of
-  some strange Gophers wearing blankets, for whatever reason.
+
+... and finally: Edgeshark is powered by ghosts, _not spectres_, lately also
+with the help of some weird Gophers wearing _blankets_, for whatever reason.
 
 ## Requested Privileges
 
