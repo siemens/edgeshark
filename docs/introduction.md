@@ -30,7 +30,7 @@ Things you can do with Edgeshark:
   plugin](/getting-started#optional-capture-plugin) for Wireshark.
 
 One thing to note is that Edgeshark **isn't** "Wireshark **in** a container".
-That is beause first and foremost, Edgeshark is a more general stand-alone
+That is because first and foremost, Edgeshark is a more general stand-alone
 virtual network/communication diagnosis tool. Only then it additionally doubles
 as a packet capture "streaming service" that is aware of containers, including
 Industrial Edge apps, and that can stream packet captures into a (remote)

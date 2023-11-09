@@ -25,9 +25,9 @@ up as "containees".
 | ❸ | ![IE App container](_media/icons/containees/IEApp.svg ':class=mdicon :no-zoom') | refers to an IE App container named "edgeshark_edgeshark_1", as can be glanced from the icon for Industrial Edge apps. _Note:_ App-individual icons can be enabled in [settings](settings). |
 | ❷ | ![Industrial Edge Runtime](_media/icons/containees/IERuntime.svg ':class=mdicon :no-zoom') | identifies the IED-OS runtime ("core") itself that, beside many other things, also houses the IED user interface. |
 | ❶ | ![stand-alone process](_media/icons/containees/Netns.svg ':class=mdicon :no-zoom') | "init (1)" refers to the initial process of the Linux host system and thus to the host's IP stack (as opposed to container IP stacks) |
-|    | ![Docker container](_media/icons/containees/Docker.svg ':class=mdicon :no-zoom') | indiciates a Docker container. |
-|    | ![k8s pod](_media/icons/containees/K8sPod.svg ':class=mdicon :no-zoom') | indiciates a k8s pod. |
-|    | ![KinD node](_media/icons/containees/Kind.svg ':class=mdicon :no-zoom') | indiciates Docker container acting as a [KinD](https://github.com/kubernetes-sigs/kind) node. |
+|    | ![Docker container](_media/icons/containees/Docker.svg ':class=mdicon :no-zoom') | indicates a Docker container. |
+|    | ![k8s pod](_media/icons/containees/K8sPod.svg ':class=mdicon :no-zoom') | indicates a k8s pod. |
+|    | ![KinD node](_media/icons/containees/Kind.svg ':class=mdicon :no-zoom') | indicates Docker container acting as a [KinD](https://github.com/kubernetes-sigs/kind) node. |
 
 The colored badge edges signal the container execution state: while a green
 badge edge means "running", yellow indicates a "paused" container.
@@ -54,7 +54,7 @@ The color and style of the "virtual wires" indicates different types of
 | ❶ | ![VETH](_media/icons/nifs/Veth.svg ':class=mdicon :no-zoom') | **virtual Ethernet point-to-point connections** ("**veth**") are rendered using solid Profinet-greenish lines. At each end of veth connections is always exactly one network interface. |
 | ❷ | ![HW network interface](_media/icons/nifs/HardwareNic.svg ':class=mdicon :no-zoom') |  **physical network cards** (or virtual "physical" network cards in case of virtual IEDs) show a stylized pale wire to the "outside world". |
 | ❸ | ![MACVLAN master](_media/icons/nifs/MacvlanMaster.svg ':class=mdicon :no-zoom')–![MACVLAN](_media/icons/nifs/Macvlan.svg ':class=mdicon :no-zoom') | a so-called "**MACVLAN**" data link layer connection between a physical network card and a container. |
-| | ![VxLAN](_media/icons/nifs/Overlay.svg ':class=mdicon :no-zoom') | not shown: Edgeshark additionally understands [VxLAN](https://en.wikipedia.org/wiki/Virtual_Extensible_LAN) overlay network interfaces and then shows a "VxLan" wire between the _overlay_ VxLAN network interface and the corresponding _underlay_ network interface, the latter used for the encapsolated traffic. |
+| | ![VxLAN](_media/icons/nifs/Overlay.svg ':class=mdicon :no-zoom') | not shown: Edgeshark additionally understands [VxLAN](https://en.wikipedia.org/wiki/Virtual_Extensible_LAN) overlay network interfaces and then shows a "VxLan" wire between the _overlay_ VxLAN network interface and the corresponding _underlay_ network interface, the latter used for the encapsulated traffic. |
 
 ### Navigating the Wiring
 
