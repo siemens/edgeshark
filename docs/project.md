@@ -15,7 +15,7 @@ Repository](https://github.com/siemens/ghostwire)).
 
 As of version 2 of Edgeshark the new discovery engine is "Gostwire". This engine
 a complete rewrite from ground up with better performance, reduced memory
-footprint and better extensibility in mind. For instance, multiple incomming
+footprint and better extensibility in mind. For instance, multiple incoming
 requests are now handled concurrently.
 
 ### Packetflix
