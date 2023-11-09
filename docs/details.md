@@ -179,7 +179,7 @@ ports get forwarded to, but additionally the containers/containees serving these
 ports.
 
 > [!NOTE] Docker users might notice TCP and UDP ports 53 getting forwarded
-> inside their containers soleley on the loopback address `127.0.0.11`. These
+> inside their containers solely on the loopback address `127.0.0.11`. These
 > ports belong to Docker's embedded DNS service that resolves container and
 > service DNS names locally. In consequence, these forwarded ports are handled
 > by the `dockerd` daemon itself. These DNS service-related port forwardings are

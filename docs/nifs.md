@@ -80,7 +80,7 @@ normally switched off on network interfaces, unless it is needed:
   tools often automatically request promiscuous during capture, unless
   explicitly told to not do so.
 
-- briding network traffic between network interfaces of a virtual bridge.
+- bridging network traffic between network interfaces of a virtual bridge.
 
 Edgeshark marks network interfaces in promiscuous mode with
 ![promiscuous mode](_media/icons/Promiscuous.svg ':class=mdicon :no-zoom').
