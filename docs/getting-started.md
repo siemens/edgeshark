@@ -169,11 +169,12 @@ for both `amd64` and `arm64` architectures.
 
 #### **macOS 64bit**
 
-We (only) support the `arm64` architecture on macOS.
+We support both the `arm64` ("Apple Silicon") and `amd64` (Intel) architectures
+on macOS.
 
 1. [Download the latest plugin
    package](https://github.com/siemens/cshargextcap/releases/latest) suitable
-   for macOS on ARM 64bit.
+   for macOS on ARM or AMD (Intel) 64bit.
 
 2. extract the contained `cshargextcap` plugin binary.
 
@@ -185,8 +186,8 @@ We (only) support the `arm64` architecture on macOS.
 5. in Wireshark's main window, click on the gear icon next to the "Docker host
    capture" external capture interface.
 
-> [!NOTE] clicking on a wireshark fin button in the web UI probably doesn't
-> work. We welcome PRs that make this feature work on macOS!
+> [!NOTE] clicking on a wireshark fin button in the web UI will show a Safari
+> error popup. We welcome PRs that make this feature work on macOS!
 
 <!-- tabs:end -->
 
