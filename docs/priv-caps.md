@@ -1,4 +1,4 @@
-# Power Containers
+# Superpower Containers
 
 ## ![privileged container](_media/icons/containeestates/Privileged.svg ':class=mdicon :no-zoom') Privileged
 
