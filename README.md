@@ -8,8 +8,9 @@
 
 [![Manual](https://img.shields.io/badge/Edgeshark-manual-blue)](https://siemens.github.io/edgeshark)
 
-[![wiring](images/thumb-wiring.png)](docs/_images/teaser-wiring.png)
-[![communication details](images/thumb-comm-details.png)](docs/_images/teaser-comm-details.png)
+Recording of the **Edgeshark class at SharkFest 2023** in Brussels, with quick start, Docker networking, the Edgeshark architecture, below the surface of Docker Desktop, and more:
+
+[![Edgeshark - The Movie (SharkFest 2023)](http://img.youtube.com/vi/53dUH6cZ9rc/0.jpg)](http://www.youtube.com/watch?v=53dUH6cZ9rc "Live Capture in containers with Edgeshark")
 
 Discover the virtual communication of containers in
 ([Docker](https://docker.com)) container hosts, such as the [Siemens Industrial
@@ -18,6 +19,9 @@ from the comfort of your Desktop's [Wireshark](https://wireshark.org) with a
 simple click. Edgeshark additionally is
 [KinD](https://github.com/kubernetes-sigs/kind)-aware and supports further
 container engines, such as containerd.
+
+[![wiring](images/thumb-wiring.png)](docs/_images/teaser-wiring.png)
+[![communication details](images/thumb-comm-details.png)](docs/_images/teaser-comm-details.png)
 
 Learn more about what Edgeshark has on offer from our [Edgeshark online
 manual](https://siemens.github.io/edgeshark).
