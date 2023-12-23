@@ -8,9 +8,9 @@
 
 [![Manual](https://img.shields.io/badge/Edgeshark-manual-blue)](https://siemens.github.io/edgeshark)
 
-Recording of the **Edgeshark class at SharkFest 2023** in Brussels, with quick start, Docker networking, the Edgeshark architecture, below the surface of Docker Desktop, and more:
+...or watch the recording of the **Edgeshark class at SharkFest 2023** in Brussels, with quick start, Docker networking, the Edgeshark architecture, below the surface of Docker Desktop, and more:
 
-[![Edgeshark - The Movie (SharkFest 2023)](http://img.youtube.com/vi/53dUH6cZ9rc/0.jpg)](http://www.youtube.com/watch?v=53dUH6cZ9rc "Live Capture in containers with Edgeshark")
+[![Edgeshark - The Movie (SharkFest 2023)](https://github.com/siemens/edgeshark/assets/6920158/da5001de-ff31-483f-afdc-14473f323abb)](http://www.youtube.com/watch?v=53dUH6cZ9rc "Live Capture in containers with Edgeshark")
 
 Discover the virtual communication of containers in
 ([Docker](https://docker.com)) container hosts, such as the [Siemens Industrial
