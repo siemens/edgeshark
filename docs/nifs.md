@@ -84,3 +84,11 @@ normally switched off on network interfaces, unless it is needed:
 
 Edgeshark marks network interfaces in promiscuous mode with
 ![promiscuous mode](_media/icons/Promiscuous.svg ':class=mdicon :no-zoom').
+
+## Network Interface Information
+
+When in a [detail view](/details), you'll see 🛈 buttons next to the network
+interfaces, just above the interface addresses. When touching or clicking an 🛈
+button, Edgeshark shows a dialog box with additional (driver) information about
+the network interface, such as the type (kind) of network interface, its driver
+name and firmware string, where available.

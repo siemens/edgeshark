@@ -13,7 +13,7 @@ UI while accessing it via an IED's _reverse proxy_.
 
 Click or touch the action bar "burger" icon and then select the item "Open & Forwarding Host Ports".
 
-## Exposed container ports
+### Exposed container ports
 
 Click or touch a container badge in order to show the container's communication
 details. These details will show a section titled "port forwarding".
