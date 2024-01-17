@@ -27,7 +27,10 @@ Things you can do with Edgeshark:
 
 - comfortably capture live container network traffic in
   [Wireshark](https://wireshark.org), using the [csharg external capture
-  plugin](/getting-started#optional-capture-plugin) for Wireshark.
+  plugin](/getting-started#optional-capture-plugin) for Wireshark. This
+  Wireshark plugin is available for Linux (AMD64/x86-64 and ARM64; Alpine, AUR,
+  Debian/Ubuntu DEB, RPM, plain binary), macOS (AMD64/x86-64, ARM64), and
+  Windows (AMD64/x86-64 only).
 
 One thing to note is that Edgeshark **isn't** "Wireshark **in** a container".
 That is because first and foremost, Edgeshark is a more general stand-alone
@@ -75,6 +78,22 @@ Alas, Edgeshark features:
 
 ... and finally: Edgeshark is powered by ghosts, _not spectres_, lately also
 with the help of some weird Gophers wearing _blankets_, for whatever reason.
+
+## Supported Container Engines
+
+- [containerd](https://containerd.io/),
+- [Docker](https://docker.com/),
+- [CRI-O](https://cri-o.io/) – requires [Event PLEG
+  API](https://kubernetes.io/docs/tasks/administer-cluster/switch-to-evented-pleg/)
+  to be enabled,
+- [podman](https://podman.io/) – when set up to be socket-activated by `systemd`
+  (see also [podman Quick Start: Starting the service with
+  systemd](https://github.com/containers/podman/blob/main/pkg/bindings/README.md#quick-start)).
+  Please note that we only support the Docker-compatible API, but not the
+  podman-proprietary workload features, such as podman pods. Discovery of
+  podman's v4+ [netavark network driver
+  stack](https://www.redhat.com/sysadmin/podman-new-network-stack) is supported
+  though.
 
 ## Requested Privileges
 

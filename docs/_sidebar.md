@@ -11,6 +11,7 @@
   * [System Info](systeminfo)
   * [Snapshot](snapshot)
   * [Containee Types](containees)
+  * [Container Groups](groups)
   * [Superpower Containers](priv-caps)
   * [Network Interfaces](nifs)
 * [Capturing](capture)
