@@ -181,13 +181,24 @@ on macOS.
 3. copy/move the plugin binary into
    `/Applications/Wireshark.app/Contents/MacOS/extcap`.
 
-4. start Wireshark.
+4. download `packetflix-handler.zip` from the same release page.
 
-5. in Wireshark's main window, click on the gear icon next to the "Docker host
-   capture" external capture interface.
+5. run the CLI command `xattr -d com.apple.quarantine packetflix-handler.zip`.
 
-> [!NOTE] clicking on a wireshark fin button in the web UI will show a Safari
-> error popup. We welcome PRs that make this feature work on macOS!
+6. unpack `packetflix-handler.zip` by double clicking it in Finder.
+
+7. copy the unpacked `packetflix-handler` (actually a folder with its `.app`
+   hidden) to your Applications folder, `/Applications`.
+
+8. go to "System Preferences" > "Security and Privacy" > tab "General" or
+   "Security" section. Allow the packetflix-handler. In case you don't see
+   anything here, try to start a capture from the web UI first, and as this will
+   be blocked, you should now see here a notice with a button to enable the
+   packetflix-handler.
+
+9. navigate to the Edgeshark web UI at `http://localhost:5001`.
+
+10. click on a fin button to start a live packet capture using Wireshark.
 
 <!-- tabs:end -->
 
