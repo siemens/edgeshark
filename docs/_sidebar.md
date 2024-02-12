@@ -5,6 +5,7 @@
   * [Sidebar & Help](sidebar-help)
   * [Navigation](sidebar-navigation)
   * [Discovery](discovery)
+  * [Filtering](filtering)
   * [Wiring View](wiring)
   * [Open & Forwarding Host Ports](open-house)
   * [Detail View](details)

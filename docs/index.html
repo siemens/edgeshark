@@ -59,7 +59,8 @@
      * icons-to-be-themed. So we need to select either on the dark or light
      * theme, and then use the subsequence-sibling combinator. Ugly.
      */
-  #docsify-darklight-theme[data-link-title="dark"]~* .mdicon {
+  #docsify-darklight-theme[data-link-title="dark"]~* .mdicon, 
+  #docsify-darklight-theme[data-link-title="dark"]~* .mdiconbutton {
     filter: invert(1) brightness(0.82);
   }
 
@@ -105,6 +106,16 @@
     right: 25px;
     /* same as element width */
   }
+
+  span.key {
+    display: inline-block;
+    font-size: 90%;
+    border-style: solid;
+    border-radius: 0.5ex;
+    border-width: 1px;
+    padding: 0ex 0.2em;
+  }
+
 </style>
 
 <body>

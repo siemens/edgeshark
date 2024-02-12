@@ -4,7 +4,7 @@ Clicking (or tapping) on the ![menu](_media/icons/Menu.svg ':class=mdicon
 :no-zoom') symbol ❶ to the left of the application bar opens the so-called
 "sidebar" with several navigation options.
 
-![open sidebar](_images/appbar-sidebar-open.png ':class=scrshot')
+![open sidebar](_images/appbar-open-sidebar.png ':class=scrshot')
 
 You can close the sidebar by either clicking or tapping on the ![left
 chevron](_media/icons/ChevronLeft.svg ':class=mdicon :no-zoom') symbol ❷ in the
