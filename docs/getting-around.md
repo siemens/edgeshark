@@ -8,12 +8,12 @@ At a quick first glance:
 ![Edgeshark web UI](_images/overview.png ':class=scrshot')
 
 * ❶ [Sidebar & Help](sidebar-help) as well as [Navigation](sidebar-navigation)
-* ❷ [Discovery](discovery)
-* ❸ host information (collapsible to hide it from view) – on Siemens Industrial
+* ❷ take a [Snapshot](snapshot) of all the shown wiring or details
+* ❸ [Discovery](discovery)
+* ❹ host information (collapsible to hide it from view) – on Siemens Industrial
   Edge devices this contains additional IED-related information.
-* ❹ [Wiring View](wiring)
+* ❺ [Wiring View](wiring)
 * [Detail View](details)
-* ❺ [Snapshot](snapshot)
 * ❻ [Containee Types](containees) (containers, processes, ...)
 * ❼ Docker composer projects, including [IE App icons where
   applicable](settings?id=siemens-industrial-edge) (IE App icons only when
