@@ -53,6 +53,7 @@ services:
         - "--discovery-service=gostwire.ghost-in-da-edge"
         - "--gw-port=5000"
         - "--proxy-discovery"
+        - "--debug"
 
         ports:
         - "127.0.0.1:5001:5001"
