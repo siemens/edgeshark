@@ -32,7 +32,7 @@ show a reddish halo.
 
 ## Specific Multi-Interface Capture
 
-When you need to capture from multiple, specific networkinterfaces – but not
+When you need to capture from multiple, specific network interfaces – but not
 from _all_ – tap or click the "multi-fin"
 ![multi-select](_media/icons/CaptureMulti.svg ':class=mdicon :no-zoom') symbol
 ❶. You are now switching into multiple interface selection mode for this
