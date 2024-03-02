@@ -41,7 +41,7 @@ Remote packet capture is supported using the following clients:
 
 - [edgeshark repository](https://github.com/siemens/edgeshark): this repository
   consists of the app-related deployment files as well as the Github page.
-- [ghostwire repository](https://github.com/siemenss/ghostwire): container-aware
+- [ghostwire repository](https://github.com/siemens/ghostwire): container-aware
   virtual networking and network configuration discovery.
   - [mobydig repository](https://github.com/siemens/mobydig) resolves DNS names
     and pings them using worker pools.
