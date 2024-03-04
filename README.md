@@ -103,6 +103,7 @@ The "Edgeshark" project consist of several repositories:
 - [Containershark Extcap plugin for
   Wireshark](https://github.com/siemens/cshargextcap)
 - support modules:
+  - [turtlefinder](https://github.com/siemens/turtlefinder)
   - [csharg (CLI)](https://github.com/siemens/csharg)
   - [mobydig](https://github.com/siemens/mobydig)
   - [ieddata](https://github.com/siemens/ieddata)
@@ -139,6 +140,6 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License and Copyright
 
-(c) Siemens AG 2023
+(c) Siemens AG 2023, 2024
 
 [SPDX-License-Identifier: MIT](LICENSE)

@@ -4,10 +4,10 @@ In the [Wiring](wiring) and [Details](details) views, Edgeshark supports
 filtering the discovered virtual IP stacks, in order to reduce the amount of
 information displayed for busy container hosts.
 
-To set a filter, press either <span class="key">Ctrl</span>+<span
-class="key">f</span> or <span class="key">/</span>: this opens the sidebar and
-places the text cursor into the filter pattern field. Edgeshark supports both
-substring patterns as well as regular expressions.
+To set a filter, press either <nobr><kbd>Ctrl</kbd>+<kbd>f</kbd></nobr> or
+<kbd>/</kbd>: this opens the sidebar and places the text cursor into the filter
+pattern field. Edgeshark supports both substring patterns as well as regular
+expressions.
 
 ![filtering](_images/filtering.png ':class=scrshot')
 
@@ -22,9 +22,8 @@ substring patterns as well as regular expressions.
 - ❸ ![regexp](_media/icons/Regexp.svg ':class=mdicon :no-zoom') switches between
   _substring_ pattern matching and _regular expression_ matching.
 
-Press <span class="key">Enter</span> or <span class="key">Esc</span> to close
-the sidebar, so that when you return to a host the last filter set will be
-applied again.
+Press <kbd>Enter</kbd> or <kbd>Esc</kbd> to close the sidebar, so that when you
+return to a host the last filter set will be applied again.
 
 Filtering pattern and options are stored in your browser's per-host local
 storage.

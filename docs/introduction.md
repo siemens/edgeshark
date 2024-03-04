@@ -28,9 +28,10 @@ Things you can do with Edgeshark:
 - comfortably capture live container network traffic in
   [Wireshark](https://wireshark.org), using the [csharg external capture
   plugin](/getting-started#optional-capture-plugin) for Wireshark. This
-  Wireshark plugin is available for Linux (AMD64/x86-64 and ARM64; Alpine, AUR,
-  Debian/Ubuntu DEB, RPM, plain binary), macOS (AMD64/x86-64, ARM64), and
-  Windows (AMD64/x86-64 only).
+  Wireshark plugin is available for:
+  - Linux AMD64/x86-64 and ARM64: Alpine, AUR, Debian/Ubuntu DEB, RPM, plain binary,
+  - macOS AMD64/x86-64 and ARM64, and
+  - Windows AMD64/x86-64 only.
 
 One thing to note is that Edgeshark **isn't** "Wireshark **in** a container".
 That is because first and foremost, Edgeshark is a more general stand-alone
@@ -60,6 +61,8 @@ Alas, Edgeshark features:
   - IP and MAC address, as well as IP routing configuration of host and app
     containers.
   - DNS configuration of host and app containers, including online validation.
+- filtering the containers/network namespaces displayed
+  <nobr>(<kbd>Ctrl</kbd>+<kbd>f</kbd></nobr> or <nobr><kbd>/</kbd>)</nobr>.
 - the [open & forwarded host ports](open-house).
 - system information about host OS and Industrial Edge runtime.
 - (experimental) shows IE App icons for quick visual identification. (needs to
@@ -90,10 +93,9 @@ with the help of some weird Gophers wearing _blankets_, for whatever reason.
   (see also [podman Quick Start: Starting the service with
   systemd](https://github.com/containers/podman/blob/main/pkg/bindings/README.md#quick-start)).
   Please note that we only support the Docker-compatible API, but not the
-  podman-proprietary workload features, such as podman pods. Discovery of
-  podman's v4+ [netavark network driver
-  stack](https://www.redhat.com/sysadmin/podman-new-network-stack) is supported
-  though.
+  podman-proprietary pod workload features. Discovery of podman's v4+ [netavark
+  network driver
+  stack](https://www.redhat.com/sysadmin/podman-new-network-stack) should work.
 
 ## Requested Privileges
 
