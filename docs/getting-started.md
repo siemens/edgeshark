@@ -14,6 +14,9 @@
 We provide multi-architecture Docker images for the `linux/amd64` and
 `linux/arm64` architectures.
 
+> [!ATTENTION] Make sure you have a Linux kernel of at least version 4.11
+> installed, however we highly recommend at least kernel version 5.6 or later.
+
 <!-- tabs:start -->
 
 #### **Docker Compose v2**

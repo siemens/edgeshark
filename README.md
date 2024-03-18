@@ -39,6 +39,9 @@ First, ensure that you have the Docker _compose_ plugin v2 installed. For Debian
 users it is strongly recommended to install docker-ce instead of docker.io
 packages, as these are updated on a regular basis.
 
+Make sure you have a Linux kernel of at least version 4.11 installed, however we
+highly recommend at least kernel version 5.6 or later.
+
 To expose service TCP port 5001 only on localhost:
 
 ```bash
