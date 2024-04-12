@@ -22,7 +22,7 @@ jobs:
 
       - name: Package Edgeshark IE app
         run: |
-          go run github.com/thediveo/tiap/cmd/tiap@v0.10.2 \
+          go run github.com/thediveo/tiap/cmd/tiap@v0.10.4 \
             deployments/industrial-edge/app \
             --out edgeshark.app \
             --app-version ${{github.ref_name}}
