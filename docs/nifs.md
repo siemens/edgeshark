@@ -87,7 +87,7 @@ Edgeshark marks network interfaces in promiscuous mode with
 
 ## Network Interface Information
 
-When in a [detail view](/details), you'll see 🛈 buttons next to the network
+When in a [detail view](details), you'll see 🛈 buttons next to the network
 interfaces, just above the interface addresses. When touching or clicking an 🛈
 button, Edgeshark shows a dialog box with additional (driver) information about
 the network interface, such as the type (kind) of network interface, its driver

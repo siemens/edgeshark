@@ -20,6 +20,7 @@
   * [Wireshark](capture-extcap)
   * [CLI](capture-cli)
 * [Docker Desktop](docker-desktop)
+* [KinD](kind)
 * [Settings](settings)
 * [Network Namespaces](netns)
 * [FAQ](faq)

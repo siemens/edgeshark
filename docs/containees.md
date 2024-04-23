@@ -18,7 +18,7 @@ process (currently) attached to them. But without a process or a file system
 anchor, network namespaces will simply vanish -- and even our <Brand/> won't be
 able to detect any trace of them anymore.
 
-> [!TIP] Clicking a containee "badge" (button) navigates to a [detailed view](/details) of
+> [!TIP] Clicking a containee "badge" (button) navigates to a [detailed view](details) of
 > the network namespace (virtual IP stack) this particular container, process,
 > ... is currently attached to.
 
