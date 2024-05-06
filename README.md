@@ -42,7 +42,7 @@ packages, as these are updated on a regular basis.
 Make sure you have a Linux kernel of at least version 4.11 installed, however we
 highly recommend at least kernel version 5.6 or later.
 
-To expose service TCP port 5001 only on localhost:
+To expose service TCP port 5001 **only on localhost**:
 
 ```bash
 wget -q --no-cache -O - \
@@ -50,7 +50,7 @@ wget -q --no-cache -O - \
   | docker compose -f - up
 ```
 
-To expose service TCP port 5001 to remote clients:
+To expose service TCP port 5001 **to remote clients**:
 
 ```bash
 wget -q --no-cache -O - \
@@ -58,8 +58,20 @@ wget -q --no-cache -O - \
   | docker compose -f - up
 ```
 
-> ⚠ This quick start deployment will **expose TCP port 5001** also to clients
-> external to your host. Make sure to have proper network protection in place.
+To expose alternate service TCP port 5500 **to remote clients** (download and
+edit to export on a different host port, then deploy using your local composer
+file):
+
+```bash
+wget -q --no-cache -O - \
+  https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose-5500.yaml \
+  | docker compose -f - up
+```
+
+> [!WARNING]
+> This quick start deployment will **expose TCP port 5001** (or 5500) also to
+> clients external to your host. Make sure to have proper network protection in
+> place.
 
 Finally, visit http://localhost:5001 and start looking around your container
 host virtual networking.
