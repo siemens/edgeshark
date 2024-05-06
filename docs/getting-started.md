@@ -38,6 +38,10 @@ wget -q --no-cache -O - \
 Finally, visit http://localhost:5001 and start looking around your container
 host virtual networking.
 
+> [!WARNING] The following quick start deployments will **expose TCP port 5001**
+> (or 5500) also to clients external to your host. Make sure to have proper
+> network protection in place.
+
 In case you need to expose service TCP port 5001 to external clients then copy,
 paste, and execute this command instead:
 
@@ -47,9 +51,16 @@ wget -q --no-cache -O - \
   | docker compose -f - up
 ```
 
-> [!WARNING] This quick start deployment will **expose TCP port 5001** also to
-> clients external to your host. Make sure to have proper network protection in
-> place.
+In case port 5001 is already in use, either deploy directly the following
+alternative composer file, or download and edit it before deploying:
+
+```bash
+wget -q --no-cache -O - \
+  https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose-5500.yaml \
+  | docker compose -f - up
+```
+
+This exposed Edgeshark on host port 5500 instead.
 
 #### **Docker Bash**
 
