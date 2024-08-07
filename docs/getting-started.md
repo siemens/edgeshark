@@ -32,11 +32,15 @@ Edgeshark services:
 ```bash
 wget -q --no-cache -O - \
   https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose-localhost.yaml \
-  | docker compose -f - up
+  | DOCKER_DEFAULT_PLATFORM= docker compose -f - up
 ```
 
 Finally, visit http://localhost:5001 and start looking around your container
 host virtual networking.
+
+> [!NOTE] Using `DOCKER_DEFAULT_PLATFORM=` ensures that our multi-arch images
+> are correctly deployed and especially avoids problems with Apple's Rosetta not
+> being able to work with read-only image deployments.
 
 > [!WARNING] The following quick start deployments will **expose TCP port 5001**
 > (or 5500) also to clients external to your host. Make sure to have proper
@@ -48,7 +52,7 @@ paste, and execute this command instead:
 ```bash
 wget -q --no-cache -O - \
   https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose.yaml \
-  | docker compose -f - up
+  | DOCKER_DEFAULT_PLATFORM= docker compose -f - up
 ```
 
 In case port 5001 is already in use, either deploy directly the following
@@ -57,7 +61,7 @@ alternative composer file, or download and edit it before deploying:
 ```bash
 wget -q --no-cache -O - \
   https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose-5500.yaml \
-  | docker compose -f - up
+  | DOCKER_DEFAULT_PLATFORM= ocker compose -f - up
 ```
 
 This exposed Edgeshark on host port 5500 instead.
@@ -70,7 +74,7 @@ simple fallback using a plain `bash` script.
 ```bash
 wget -q --no-cache -O - \
   https://github.com/siemens/edgeshark/raw/main/deployments/nocomposer/edgeshark.sh \
-  | bash -s up
+  | DOCKER_DEFAULT_PLATFORM= bash -s up
 ```
 
 The bash script takes a single argument, either `up` or `down`.
