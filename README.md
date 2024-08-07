@@ -47,7 +47,7 @@ To expose service TCP port 5001 **only on localhost**:
 ```bash
 wget -q --no-cache -O - \
   https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose-localhost.yaml \
-  | docker compose -f - up
+  | DOCKER_DEFAULT_PLATFORM= docker compose -f - up
 ```
 
 > [!WARNING]
@@ -60,7 +60,7 @@ To expose service TCP port 5001 **to remote clients**:
 ```bash
 wget -q --no-cache -O - \
   https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose.yaml \
-  | docker compose -f - up
+  | DOCKER_DEFAULT_PLATFORM= docker compose -f - up
 ```
 
 To expose alternate service TCP port 5500 **to remote clients** (download and
@@ -70,7 +70,7 @@ file):
 ```bash
 wget -q --no-cache -O - \
   https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose-5500.yaml \
-  | docker compose -f - up
+  | DOCKER_DEFAULT_PLATFORM= docker compose -f - up
 ```
 
 Finally, visit http://localhost:5001 and start looking around your container
@@ -88,7 +88,7 @@ down, without needing an installed docker compose plugin.
 ```bash
 wget -q --no-cache -O - \
   https://github.com/siemens/edgeshark/raw/main/deployments/nocomposer/edgeshark.sh \
-  | bash -s up
+  | DOCKER_DEFAULT_PLATFORM= bash -s up
 ```
 
 ### Siemens Industrial Edge
