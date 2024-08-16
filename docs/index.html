@@ -50,6 +50,46 @@
     /* theming hack */
   }
 
+  /* don't adorn external video links */
+  a[target="_blank"]:not(.github-corner):not(.noext).video::after {
+    background: none;
+  }
+
+  a.video {
+    position: relative;
+    display: inline-block;
+  }
+
+  a.video::before {
+    content: '⯈';
+    color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 4ex;
+    width: 2.5em;
+    background-color: rgba(200, 0, 0, 0.8);
+    border-radius: 0.5ex;
+    border-width: 0;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  a.video::after {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-width: 1em;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
+    transform: scaleX(1.75) translateY(-50%);
+    filter: none !important;
+  }
+
   /* 
      * Now this is what might be called a CSS hack: we have to deal with
      * changing the fill/stroke colors of SVG icons that have been inlined using
