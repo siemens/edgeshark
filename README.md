@@ -8,6 +8,11 @@
 
 [![Manual](https://img.shields.io/badge/Edgeshark-manual-blue)](https://siemens.github.io/edgeshark)
 
+> [!IMPORTANT]  
+> Wireshark 4.4.0 is not supported as it breaks extcaps such as Edgeshark.
+> Wireshark 4.4.1 scheduled for Oct 9th 2024 will contain two fixes so that this
+> extcap plugin will be able to correctly work again.
+
 ...or watch the recording of the **Edgeshark class at SharkFest 2023** in Brussels, with quick start, Docker networking, the Edgeshark architecture, below the surface of Docker Desktop, and more:
 
 [![Edgeshark - The Movie (SharkFest 2023)](https://github.com/siemens/edgeshark/assets/6920158/da5001de-ff31-483f-afdc-14473f323abb)](http://www.youtube.com/watch?v=53dUH6cZ9rc "Live Capture in containers with Edgeshark")
