@@ -3,6 +3,7 @@ version: '2.4'
 services:
     gostwire:
         image: 'gostwire'
+        hostname: 'gostwire.ghost-in-da-edge'
         read_only: true
         mem_limit: 48M
         memswap_limit: 48M

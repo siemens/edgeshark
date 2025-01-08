@@ -5,6 +5,7 @@ name: 'edgeshark'
 services:
     gostwire:
         image: 'ghcr.io/siemens/ghostwire'
+        hostname: 'gostwire.ghost-in-da-edge'
         pull_policy: always
         restart: 'unless-stopped'
         read_only: true
