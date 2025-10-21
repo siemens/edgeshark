@@ -13,7 +13,7 @@ expressions.
 
 - ❶ the **filter pattern**, either:
   - a **substring** that must be included in a containee's name, Composer
-    porject, or Kubernetes pod,
+    project, or Kubernetes pod,
   - or a [**regular expression**](https://regex101.com/) in
     ECMAScript/JavaScript syntax when the option
     ![regexp](_media/icons/Regexp.svg ':class=mdicon :no-zoom') ❸ is active.

@@ -61,7 +61,7 @@ alternative composer file, or download and edit it before deploying:
 ```bash
 wget -q --no-cache -O - \
   https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose-5500.yaml \
-  | DOCKER_DEFAULT_PLATFORM= ocker compose -f - up
+  | DOCKER_DEFAULT_PLATFORM= docker compose -f - up
 ```
 
 This exposed Edgeshark on host port 5500 instead.

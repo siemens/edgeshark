@@ -111,7 +111,7 @@ If you want to live capture traffic using Wireshark, please [download the csharg
 extcap plugin](https://github.com/siemens/cshargextcap/releases) for the
 OS/distribution and install it. Please also check the [cshargextcap installation
 instructions](https://github.com/siemens/cshargextcap?tab=readme-ov-file#installation),
-especially for macos users regarding the additional packetflix URL handler
+especially for macOS users regarding the additional packetflix URL handler
 installation.
 
 ## Project Structure

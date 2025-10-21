@@ -215,7 +215,7 @@ The "**St**" or **state column** signals the socket connection state:
   then shows the IP address and port number of the remote end of the connection.
 
 The "**Group · Container · Process**" column ❸ not only identifies the process
-using a particular socker by name and PID, but additionally the containing
+using a particular socket by name and PID, but additionally the containing
 container (if any).
 
 On Docker hosts, eagle-eyed users might spot a "guest" ❹ opening sockets in IP
