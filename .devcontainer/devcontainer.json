@@ -1,0 +1,19 @@
+{
+    "name": "Edgeshark",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        // base:ubuntu has no node, which docsify needs.
+        "ghcr.io/devcontainers/features/node:2": {},
+        "ghcr.io/thediveo/devcontainer-features/docsify:1": {}
+    },
+    "forwardPorts": [
+        3300
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mhutchie.git-graph"
+            ]
+        }
+    }
+}

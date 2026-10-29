@@ -1,0 +1,27 @@
+:root {
+    --mono-font: Consolas,'Roboto Mono','Lucida Sans','Courier','Courier New', monospace;
+}
+
+code, pre {
+    font-family: var(--mono-font);
+}
+
+body.vscode-light {
+    code, pre {
+        color: inherit;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    span.hljs-attr { color: darkgreen; }
+    span.hljs-keyword { color: darkblue; }
+}
+
+body.vscode-dark {
+    code {
+        color: inherit;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+    span.hljs-attr { color: lightgreen; }
+    span.hljs-keyword { color: lightsteelblue; }
+}
+
+code.code-line { background-color: transparent !important; }

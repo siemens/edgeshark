@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="8 8 384 384" width="512" height="512">
+  <title>ContainerShark</title>
+  <defs>
+    <clipPath id="body-clip">
+      <path d="M95,158 Q165,146 238,138 L238,336 Q170,302 108,226 Z"/>
+    </clipPath>
+    <clipPath id="mouth-clip">
+      <path d="M352,208 L304,208 Q262,210 262,243 Q262,276 304,278 L356,278 Q334,243 352,208 Z"/>
+    </clipPath>
+  </defs>
+
+  <g stroke="#00343B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    <!-- tail -->
+    <path fill="#005E69" d="M102,162 C78,140 48,114 22,102 C38,134 58,168 80,200 C62,220 46,238 36,256 C64,250 92,234 114,220 Z"/>
+    <!-- dorsal fin -->
+    <path fill="#005E69" d="M186,150 Q186,104 170,68 Q236,88 272,144 Z"/>
+    <!-- pectoral fin -->
+    <path fill="#005E69" d="M146,262 Q132,292 116,312 Q164,304 196,284 Z"/>
+
+    <!-- body -->
+    <path fill="#00707C" d="M95,158 Q165,146 238,138 L238,336 Q170,302 108,226 Z"/>
+    <path fill="#5FB3BB" stroke="none" clip-path="url(#body-clip)" d="M80,206 Q170,222 240,246 L240,360 L80,360 Z"/>
+    <!-- container ribs -->
+    <g fill="none" stroke="#004A53" stroke-width="7">
+      <path d="M130,166 L130,238"/>
+      <path d="M160,161 L160,266"/>
+      <path d="M190,157 L190,290"/>
+      <path d="M215,153 L215,308"/>
+    </g>
+    <path fill="none" d="M95,158 Q165,146 238,138 L238,336 Q170,302 108,226 Z"/>
+
+
+    <!-- head (container front) -->
+    <path fill="#0E8794" d="M238,138 L382,154 L375,208 L352,208 Q334,243 356,278 L366,278 L362,300 L238,336 Z"/>
+
+    <!-- mouth interior -->
+    <path fill="#00343B" d="M352,208 L304,208 Q262,210 262,243 Q262,276 304,278 L356,278 Q334,243 352,208 Z"/>
+    <ellipse fill="#007A87" stroke="none" clip-path="url(#mouth-clip)" cx="310" cy="276" rx="40" ry="18"/>
+    <path fill="none" stroke="#A9DADF" stroke-width="6" d="M252,154 L296,159"/>
+
+    <!-- teeth -->
+    <g fill="#D6EEF0" stroke-width="4">
+      <path d="M286,211 L300,209 L293,228 Z"/>
+      <path d="M308,209 L322,209 L315,230 Z"/>
+      <path d="M334,209 L348,209 L341,228 Z"/>
+      <path d="M288,275.5 L301,277.7 L294,258 Z"/>
+      <path d="M310,277 L324,277 L317,256 Z"/>
+      <path d="M334,277 L348,277 L341,259 Z"/>
+    </g>
+
+    <!-- eyes -->
+    <g fill="#D6EEF0" stroke-width="5">
+      <ellipse cx="300" cy="182" rx="13" ry="14"/>
+      <ellipse cx="331" cy="181" rx="13" ry="14"/>
+    </g>
+    <g fill="#00343B" stroke="none">
+      <circle cx="304" cy="184" r="7"/>
+      <circle cx="335" cy="183" r="7"/>
+    </g>
+  </g>
+</svg>

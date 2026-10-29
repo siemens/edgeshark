@@ -1,4 +1,4 @@
-<img alt="Edgeshark logo" align="right" width="100" height="100" src="icons/edgeshark/petrolshark-192x192.png" style="padding: 0 0 1ex 0.8em">
+<img alt="Edgeshark logo" align="right" width="100" height="100" src="icons/edgeshark/containershark-192x192.png" style="padding: 0 0 1ex 0.8em">
 
 [![Siemens](https://img.shields.io/badge/github-siemens-009999?logo=github)](https://github.com/siemens)
 [![Industrial Edge](https://img.shields.io/badge/github-industrial%20edge-e39537?logo=github)](https://github.com/industrial-edge)
@@ -7,11 +7,6 @@
 # Edgeshark
 
 [![Manual](https://img.shields.io/badge/Edgeshark-manual-blue)](https://siemens.github.io/edgeshark)
-
-> [!IMPORTANT]  
-> Wireshark 4.4.0 is not supported as it breaks extcaps such as Edgeshark.
-> Wireshark 4.4.1 scheduled for Oct 9th 2024 will contain two fixes so that this
-> extcap plugin will be able to correctly work again.
 
 ...or watch the recording of the **Edgeshark class at SharkFest 2023** in Brussels, with quick start, Docker networking, the Edgeshark architecture, below the surface of Docker Desktop, and more:
 
@@ -34,7 +29,6 @@ manual](https://siemens.github.io/edgeshark).
 ## Quick Start
 
 - plain [Docker Host](#docker-host) with `docker compose` v2
-- plain [Docker Host Without Composer](#docker-host-without-composer) – just Docker and bash.
 - [Siemens Industrial Edge](#siemens-industrial-edge)
 
 ### Docker Host
@@ -78,23 +72,12 @@ wget -q --no-cache -O - \
   | DOCKER_DEFAULT_PLATFORM= docker compose -f - up
 ```
 
-Finally, visit http://localhost:5001 and start looking around your container
-host virtual networking.
+Finally, visit http://localhost:5001 (or :5500) and start looking around your
+container host virtual networking.
 
 If you want to live capture traffic using Wireshark, please [download the csharg
 extcap plugin](https://github.com/siemens/cshargextcap/releases) for the
 OS/distribution and install it. 
-
-### Docker Host Without Composer
-
-Alternatively, a bash script can be used to bring the Edgeshark services up or
-down, without needing an installed docker compose plugin.
-
-```bash
-wget -q --no-cache -O - \
-  https://github.com/siemens/edgeshark/raw/main/deployments/nocomposer/edgeshark.sh \
-  | DOCKER_DEFAULT_PLATFORM= bash -s up
-```
 
 ### Siemens Industrial Edge
 
