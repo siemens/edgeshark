@@ -4,7 +4,7 @@
 name: 'edgeshark'
 services:
     gostwire:
-        image: 'ghcr.io/siemens/ghostwire'
+        image: 'ghcr.io/siemens/ghostwire:stable'
         pull_policy: always
         restart: 'unless-stopped'
         read_only: true
@@ -43,7 +43,7 @@ services:
                 priority: 100
 
     edgeshark:
-        image: 'ghcr.io/siemens/packetflix'
+        image: 'ghcr.io/siemens/packetflix:stable'
         pull_policy: 'always'
         read_only: true
         restart: 'unless-stopped'
