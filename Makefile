@@ -1,4 +1,4 @@
-.PHONY: help icons docsify deploy undeploy
+.PHONY: help icons docsify deploy undeploy lucky unlucky
 
 help: ## list available targets
 	@# Derived from Gomega's Makefile (github.com/onsi/gomega) under MIT License
@@ -12,3 +12,9 @@ icons: ## generate optimized SVG icons for documentation from icons/_media/... (
 		echo "..." $${d} "-->" $${d#*/}; \
 		svgo -f $${d} -o docs/$${d#*/}; \
 	done
+
+lucky: ## deploys the i-feel-lucky docker compose
+	docker compose -f deployments/i-feel-lucky/docker-compose.yaml up -d
+
+unlucky: ## undeploys the i-feel-lucky docker compose
+	docker compose -f deployments/i-feel-lucky/docker-compose.yaml down

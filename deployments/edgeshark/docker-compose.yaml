@@ -1,8 +1,7 @@
 # EdgeShark combined deployment of gostwire and packetflix services
-version: '2.4'
 services:
     gostwire:
-        image: 'gostwire'
+        image: 'ghcr.io/siemens/ghostwire:stable'
         read_only: true
         mem_limit: 48M
         memswap_limit: 48M
@@ -46,7 +45,7 @@ services:
                 priority: 100
 
     edgeshark:
-        image: 'packetflix'
+        image: 'ghcr.io/siemens/packetflix:stable'
         mem_limit: 32mb
         read_only: true
         restart: always
