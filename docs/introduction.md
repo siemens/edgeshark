@@ -31,7 +31,7 @@ Things you can do with Edgeshark:
   Wireshark plugin is available for:
   - Linux AMD64/x86-64 and ARM64: Alpine, AUR, Debian/Ubuntu DEB, RPM, plain binary,
   - macOS AMD64/x86-64 and ARM64, and
-  - Windows AMD64/x86-64 only.
+  - Windows AMD64/x86-64 and ARM64.
 
 One thing to note is that Edgeshark **isn't** "Wireshark **in** a container".
 That is because first and foremost, Edgeshark is a more general stand-alone

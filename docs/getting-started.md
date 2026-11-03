@@ -137,7 +137,8 @@ ignore this section.
 
 #### **Windows 64bit**
 
-We offer a Windows 64 bit installer for the `amd64` (`x86-64`) platform only.
+We offer Windows 64 bit installers for both the `amd64` (`x86-64`) and `arm64`
+(Windows on Arm) platforms.
 
 1. Make sure that you have a sufficiently recent [Wireshark (64
    bit)](https://wireshark.org) installed. At least version 3.0.2 or later is
@@ -145,15 +146,22 @@ We offer a Windows 64 bit installer for the `amd64` (`x86-64`) platform only.
    Wireshark. Wireshark 4.x is also supported.
 
 2. [Download the latest Windows
-   installer](https://github.com/siemens/cshargextcap/releases/latest) `.zip`
-   file from the releases page of the siemens/csharkextcap project.
+   installer](https://github.com/siemens/cshargextcap/releases/latest)
+   `cshargextcap_*_windows_amd64_setup.exe` (or `…_arm64_setup.exe` for Windows
+   on Arm) from the releases page of the siemens/cshargextcap project.
 
-3. Double click on the downloaded `.zip` file to view its contents and then
-   simply run the included installer executable inside it. Next, follow the
-   on-screen instructions of the installer.
+3. Run the downloaded installer; it needs administrator rights and asks you to
+   accept the license before installing. The installer automatically locates
+   your Wireshark installation and also registers the `packetflix:` URL
+   handler.
+
+   For unattended installation, run it with `/S`, optionally with `/D=<Wireshark
+   extcap folder>`.
 
 4. In Edgeshark's web UI simply click on one of the Wireshark fin buttons to
    start a Wireshark capture session.
+
+To uninstall, use Windows' "Apps & features".
 
 #### **Linux 64bit**
 
@@ -190,33 +198,31 @@ for both `amd64` and `arm64` architectures.
 We support both the `arm64` ("Apple Silicon") and `amd64` (Intel) architectures
 on macOS.
 
-1. [Download the latest plugin
-   package](https://github.com/siemens/cshargextcap/releases/latest) suitable
-   for macOS on ARM or AMD (Intel) 64bit.
+1. install [Wireshark](https://www.wireshark.org/download.html) first.
 
-2. extract the contained `cshargextcap` plugin binary.
+2. run in Terminal:
 
-3. copy/move the plugin binary into
-   `/Applications/Wireshark.app/Contents/MacOS/extcap`.
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://github.com/siemens/cshargextcap/releases/latest/download/macos-install-handler.sh)"
+   ```
 
-4. download `packetflix-handler.zip` from the same release page.
+   This installs the latest release for your user, without admin rights:
 
-5. run the CLI command `xattr -d com.apple.quarantine packetflix-handler.zip`.
+   - the `cshargextcap` plugin into Wireshark's personal extcap folder
+     `~/.local/lib/wireshark/extcap`,
+   - the `packetflix:` URL handler into
+     `~/Applications/packetflix-handler.app`.
 
-6. unpack `packetflix-handler.zip` by double clicking it in Finder.
+   Run the same command again to upgrade. It also replaces older installations
+   that put the plugin into `Wireshark.app` and the handler into
+   `/Applications`. Restart Wireshark afterwards if it was running.
 
-7. copy the unpacked `packetflix-handler` (actually a folder with its `.app`
-   hidden) to your Applications folder, `/Applications`.
+3. navigate to the Edgeshark web UI at `http://localhost:5001`.
 
-8. go to "System Preferences" > "Security and Privacy" > tab "General" or
-   "Security" section. Allow the packetflix-handler. In case you don't see
-   anything here, try to start a capture from the web UI first, and as this will
-   be blocked, you should now see here a notice with a button to enable the
-   packetflix-handler.
+4. click on a fin button to start a live packet capture using Wireshark.
 
-9. navigate to the Edgeshark web UI at `http://localhost:5001`.
-
-10. click on a fin button to start a live packet capture using Wireshark.
+To uninstall, delete `~/Applications/packetflix-handler.app` and
+`~/.local/lib/wireshark/extcap/cshargextcap`.
 
 <!-- tabs:end -->
 
