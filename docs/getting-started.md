@@ -124,7 +124,29 @@ Deploying Edgeshark creates the two services named packetflix and gostwire, and
 expose **port 5001** on the host as shown below. Please note that access via the
 Industrial Edge device reverse proxy is specific to this platform. 
 
-![Edgeshark Services](_media/edgeshark-services.png)
+```mermaid
+flowchart TB
+    proxyport((":443/edgeshark"))
+    hostport((":5001"))
+
+    subgraph ied["IED"]
+        subgraph edgeshark["Edgeshark"]
+            pfport((":5001"))
+            packetflix["Packetflix<br/>«service»"]
+            gwport((":5000"))
+            gostwire["Gostwire<br/>«service»"]
+
+            pfport --- packetflix
+            packetflix -.-> gwport
+            gwport --- gostwire
+        end
+        rp["reverse proxy"]
+    end
+
+    hostport -. "«forwards»" .-> pfport
+    proxyport --- rp
+    rp -. "«forwards»" .-> pfport
+```
 
 ## Optional Capture Plugin
 
