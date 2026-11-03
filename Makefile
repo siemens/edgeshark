@@ -18,3 +18,7 @@ lucky: ## deploys the i-feel-lucky docker compose
 
 unlucky: ## undeploys the i-feel-lucky docker compose
 	docker compose -f deployments/i-feel-lucky/docker-compose.yaml down
+	@# compose down skips the network if another compose project created it
+	@if docker network inspect ghost-in-da-edge >/dev/null 2>&1; then \
+		docker network rm ghost-in-da-edge; \
+	fi
