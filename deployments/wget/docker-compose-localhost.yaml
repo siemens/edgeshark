@@ -73,6 +73,7 @@ services:
             - CAP_SYS_ADMIN     # change namespaces
             - CAP_SYS_CHROOT    # change mount namespaces
             - CAP_SYS_PTRACE    # access nsfs namespace information
+            - CAP_DAC_READ_SEARCH # discover and use bind-mounted network namespaces
             - CAP_NET_ADMIN     # allow dumpcap to control promisc. mode
             - CAP_NET_RAW       # capture raw packets, and not that totally burnt stuff
         security_opt:
