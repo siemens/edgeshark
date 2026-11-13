@@ -3,6 +3,11 @@ services:
     gostwire:
         image: 'ghcr.io/siemens/ghostwire:latest'
         read_only: true
+        # Since the container file system is read-only, explicitly provide a
+        # writable /tmp: on Industrial Edge devices, gostwire copies the IE App
+        # database there in order to look up IE App icons and titles.
+        tmpfs:
+            - /tmp
         mem_limit: 48M
         memswap_limit: 48M
         restart: always

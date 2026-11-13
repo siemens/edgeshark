@@ -8,6 +8,11 @@ services:
         pull_policy: always
         restart: 'unless-stopped'
         read_only: true
+        # Since the container file system is read-only, explicitly provide a
+        # writable /tmp: on Industrial Edge devices, gostwire copies the IE App
+        # database there in order to look up IE App icons and titles.
+        tmpfs:
+            - /tmp
         entrypoint:
         - "/gostwire"
         - "--http=[::]:5000"
