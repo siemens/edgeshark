@@ -1,36 +1,118 @@
-name: Build and release Industrial Edge app artefact
+name: Build and release Industrial Edge app artefacts
 
+# App versions are vX.Y.Z, where X.Y is the major.minor version of the
+# ghostwire image used and Z counts app revisions within this X.Y; see
+# CONTRIBUTING.md for details.
 on:
   push:
     tags:
       - 'v[0-9]+.[0-9]+.[0-9]+'
+      - 'v[0-9]+.[0-9]+.[0-9]+-*'
+
+permissions:
+  contents: read
 
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+    env:
+      TAG: ${{ github.ref_name }}
+      APP_DIR: deployments/industrial-edge/app
+      COMPOSE: deployments/industrial-edge/app/edgeshark/docker-compose.yml
+
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # Also ensures to get the annotated release tag, as actions/checkout
+      # fetches it only as a lightweight tag.
+      - name: Get all git tags
+        run: git fetch --prune --unshallow --tags --force
+
+      - name: Check app version and assemble release notes
+        run: |
+          image_version() {
+            local version
+            version=$(yq ".services.$1.image" "$COMPOSE")
+            version=${version##*:}
+            if [[ ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "::error file=$COMPOSE::$1 image must be tagged X.Y.Z, got \"$version\""
+              exit 1
+            fi
+            echo "$version"
+          }
+          gw=$(image_version gostwire)
+          pf=$(image_version edgeshark)
+
+          if [[ ! "$TAG" =~ ^v([0-9]+)\.([0-9]+)\.[0-9]+(-.+)?$ ]]; then
+            echo "::error::invalid app version tag \"$TAG\""
+            exit 1
+          fi
+          if [[ "${BASH_REMATCH[1]}.${BASH_REMATCH[2]}" != "${gw%.*}" ]]; then
+            echo "::error::app version ${TAG#v} must match ghostwire $gw major.minor ${gw%.*}"
+            exit 1
+          fi
+
+          {
+            echo "Ghostwire $gw, Packetflix $pf."
+            if [[ $(git cat-file -t "refs/tags/$TAG") == tag ]]; then
+              annotation=$(git tag -l --format='%(contents:subject)%0a%0a%(contents:body)' "$TAG")
+              if [[ -n "${annotation//[[:space:]]/}" ]]; then
+                printf '\n%s\n' "$annotation"
+              fi
+            fi
+          } > release-notes.md
+          cat release-notes.md
 
       - name: Set up Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
           go-version: 'stable'
+          cache: false
 
-      - name: Package Edgeshark IE app
+      - name: Build Industrial Edge app bundles
         run: |
-          go run github.com/thediveo/tiap/cmd/tiap@v0.10.4 \
-            deployments/industrial-edge/app \
-            --out edgeshark.app \
-            --app-version ${{github.ref_name}}
-          zip edgeshark.zip edgeshark.app LICENSE
+          # tiap interprets release notes as a double-quoted Go string literal.
+          notes=$(<release-notes.md)
+          notes=${notes//\\/\\\\}
+          notes=${notes//\"/\\\"}
+          version=${TAG#v}
+          for arch in amd64 arm64; do
+            template="$APP_DIR"
+            if [[ "$arch" != amd64 ]]; then
+              # IE requires each architecture to be a separate app with its own
+              # appId and title; tiap derives the IE app repository name from
+              # the compose project's directory name.
+              template="$RUNNER_TEMP/edgeshark-$arch-app"
+              rm -rf "$template"
+              cp -a "$APP_DIR" "$template"
+              mv "$template/edgeshark" "$template/edgeshark-$arch"
+              jq -s '.[0] * .[1]' \
+                "$APP_DIR/detail.json" \
+                "deployments/industrial-edge/app-$arch/detail.$arch.json" \
+                > "$template/detail.json"
+            fi
+            bundle="edgeshark-$version-$arch.app"
+            go run github.com/thediveo/tiap/cmd/tiap@v0.14.5 \
+              "$template" \
+              --out "$bundle" \
+              --app-version "$TAG" \
+              --release-notes "$notes" \
+              --platform "linux/$arch" \
+              --pull-always
+            zip -9 "$bundle.zip" "$bundle" LICENSE
+          done
 
-      - name: Release
-        uses: softprops/action-gh-release@v1
+      - name: Release Industrial Edge app bundles
+        uses: softprops/action-gh-release@8a0cd651e5b2365bd640854a3fa5dfc70e4875f3 # v3.0.4
         with:
+          body_path: release-notes.md
+          generate_release_notes: true
+          prerelease: ${{ contains(github.ref_name, '-') }}
+          fail_on_unmatched_files: true
           files: |
-            edgeshark.zip
+            edgeshark-*-amd64.app.zip
+            edgeshark-*-arm64.app.zip
             LICENSE

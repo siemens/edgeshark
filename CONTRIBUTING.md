@@ -37,4 +37,36 @@ following prerequisites:
   specified URL. After you've signed the CLA, your PR will automatically be
   cleared for merging if all other test stages succeed.
 
+## Releasing the Industrial Edge app
+
+Pushing a `vX.Y.Z` tag builds the Edgeshark Industrial Edge apps for `amd64`
+and `arm64` and publishes them as a GitHub release, as
+`edgeshark-X.Y.Z-amd64.app.zip` and `edgeshark-X.Y.Z-arm64.app.zip`. Tags with a
+pre-release suffix, such as `vX.Y.Z-rc.1`, are published as pre-releases. App
+versions follow this scheme:
+
+* `X.Y` is the major.minor version of the ghostwire image in
+  [`deployments/industrial-edge/app/edgeshark/docker-compose.yml`](deployments/industrial-edge/app/edgeshark/docker-compose.yml);
+  the release workflow fails otherwise.
+* `Z` counts app revisions within `X.Y`: bump it for any change, such as a
+  ghostwire patch release, a packetflix update, or deployment changes. Reset it
+  to 0 when ghostwire's major or minor version changes.
+
+The exact ghostwire and packetflix versions are automatically listed in the
+release notes. To add further release notes, use an annotated tag, for instance:
+
+```bash
+git tag -a v2.7.2 -m "Show IE app icons and titles" \
+    -m "Gostwire now gets a writable /tmp, needed for looking up IE app icons."
+git push origin v2.7.2
+```
+
+The `arm64` app is derived on the fly from the same app template in
+[`deployments/industrial-edge/app/`](deployments/industrial-edge/app/), as IE
+requires each architecture to be a separate app: its `appId` and `title` are
+overridden from
+[`deployments/industrial-edge/app-arm64/detail.arm64.json`](deployments/industrial-edge/app-arm64/detail.arm64.json),
+and its app repository directory is renamed from `edgeshark` to
+`edgeshark-arm64`. Never change the `appId`s of already released apps.
+
 ## Thank you!

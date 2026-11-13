@@ -83,11 +83,15 @@ OS/distribution and install it.
 
 Please head over to our
 [releases](https://github.com/siemens/edgeshark/releases) page to download the
-latest (and greatest) Edgeshark app (amd64 only at this time):
+latest (and greatest) Edgeshark app. There are separate app bundles for `amd64`
+and `arm64` IEDs; both can be imported into the same IEM side by side as they
+are two different IE apps:
 
-1. download the `edgeshark.zip` file.
+1. download the `edgeshark-<version>-amd64.app.zip` or
+   `edgeshark-<version>-arm64.app.zip` file, depending on your IED's
+   architecture.
 2. unpack the downloaded ZIP archive.
-3. import the `edgeshark.app` file into the catalog of your IEM.
+3. import the `edgeshark-<version>-<arch>.app` file into the catalog of your IEM.
 4. deploy ... and enjoy!
 
 If you want to live capture traffic using Wireshark, please [download the csharg
