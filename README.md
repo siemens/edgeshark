@@ -101,19 +101,19 @@ instructions](https://github.com/siemens/cshargextcap?tab=readme-ov-file#install
 especially for macOS users regarding the additional packetflix URL handler
 installation.
 
-## Project Structure
+## Edgeshark Project
 
-The "Edgeshark" project consist of several repositories:
-- 🖝 **Edgeshark Hub repository** 🖜
-- [G(h)ostwire discovery service](https://github.com/siemens/ghostwire)
+This hub repository is part of the "Edgeshark" project that consist of several
+repositories:
+- **Edgeshark Hub repository** with Edgeshark Industrial Edge App.
+- [Ghostwire discovery service](https://github.com/siemens/ghostwire)
 - [Packetflix packet streaming service](https://github.com/siemens/packetflix)
 - [Containershark Extcap plugin for
   Wireshark](https://github.com/siemens/cshargextcap)
-- support modules:
-  - [turtlefinder](https://github.com/siemens/turtlefinder)
-  - [csharg (CLI)](https://github.com/siemens/csharg)
-  - [mobydig](https://github.com/siemens/mobydig)
-  - [ieddata](https://github.com/siemens/ieddata)
+- [csharg (CLI)](https://github.com/siemens/csharg)
+- [mobydig](https://github.com/siemens/mobydig)
+- [ieddata](https://github.com/siemens/ieddata)
+- [turtlefinder](https://github.com/siemens/turtlefinder)
 
 ## Working on the Manual
 
