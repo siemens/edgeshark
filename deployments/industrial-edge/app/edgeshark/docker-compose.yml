@@ -1,7 +1,7 @@
 version: '2.4'
 services:
   gostwire:
-    image: 'ghcr.io/siemens/ghostwire:2.7.0'
+    image: 'ghcr.io/siemens/ghostwire:2.7.1'
     read_only: true
     # Since the container file system is read-only, explicitly provide a
     # writable /tmp: on Industrial Edge devices, gostwire copies the IE App
@@ -40,7 +40,7 @@ services:
       - './publish/:/publish/'
       - './cfg-data/:/cfg-data/'
   edgeshark:
-    image: 'ghcr.io/siemens/packetflix:1.0.0'
+    image: 'ghcr.io/siemens/packetflix:1.0.1'
     mem_limit: 32mb
     read_only: true
     restart: unless-stopped
