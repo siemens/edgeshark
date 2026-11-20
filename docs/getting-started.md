@@ -90,8 +90,9 @@ host virtual networking.
 
 1. Download the [latest Edgeshark app `.zip`
    file](https://github.com/siemens/edgeshark/releases/latest) from the releases
-   section of this project: `edgeshark-<version>-amd64.app.zip` or
-   `edgeshark-<version>-arm64.app.zip`, depending on your IED's architecture.
+   section of this project, depending on your IED's architecture:
+   - `amd64` (`x86-64`) IEDs: `edgeshark-<version>-amd64.app.zip`,
+   - `arm64` IEDs: `edgeshark-<version>-arm64.app.zip`.
 
 2. Unpack the contained `edgeshark-<version>-<arch>.app` file inside the `.zip`
    archive.
@@ -114,16 +115,17 @@ host virtual networking.
    should now see the "Edgeshark" user interface.
 
    > [!NOTE] Edgeshark doesn't expose port 5001 on IEDs anymore; please use the
-   > IED's reverse proxy instead.
+   > IED's reverse proxy TLS port 443 instead.
 
 <!-- tabs:end -->
 
 Please see [Getting around](getting-around) for a tour of the user interface.
 
 Deploying Edgeshark creates the two services named packetflix and gostwire. On
-Docker hosts, packetflix is exposed at **port 5001** on the host. On Industrial
-Edge devices, packetflix is instead only reachable via the device's reverse
-proxy at `/edgeshark/`, as shown below.
+plain Docker host deployments, packetflix is exposed at HTTP **port 5001** on
+the host. On Industrial Edge devices, packetflix is instead only reachable at
+TLS **port 443** via the device's reverse proxy at `/edgeshark/`, as shown
+below.
 
 ```mermaid
 flowchart TB
