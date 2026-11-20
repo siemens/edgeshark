@@ -90,44 +90,44 @@ host virtual networking.
 
 1. Download the [latest Edgeshark app `.zip`
    file](https://github.com/siemens/edgeshark/releases/latest) from the releases
-   section of this project. At the moment, we provide only app files for the
-   `linux/amd64` platform (a.k.a. `linux/x86-64`).
+   section of this project: `edgeshark-<version>-amd64.app.zip` or
+   `edgeshark-<version>-arm64.app.zip`, depending on your IED's architecture.
 
-2. Unpack the contained `edgeshark.app` file inside the `.zip` archive.
+2. Unpack the contained `edgeshark-<version>-<arch>.app` file inside the `.zip`
+   archive.
 
-3. Import the Edgeshark app file `edgeshark.app` into your IEM
+3. Import the Edgeshark app file `edgeshark-<version>-<arch>.app` into your IEM
    Industrial Edge Management system.
 
 4. Go to the catalog of your IEM and deploy/install the Edgeshark app onto your IED
    Industrial Edge Device(s).
 
-  > [!WARNING] The Edgeshark UI and services are exposed on port 5001 on your
-  > IED hosts **without any user authorization**. This is required in order to
-  > support initiating remote packet captures from the user interface. (There's
-  > nothing we can do until the IED-OS starts supporting session hand-overs from
-  > a user web browser to an external application.)
+  > [!WARNING] The Edgeshark UI and services are exposed via your IED's reverse
+  > proxy at `https://`_ied-address_`/edgeshark/` **without requiring an IED
+  > login**. This is required in order to support initiating remote packet
+  > captures from the user interface and from Wireshark. (There's nothing we
+  > can do until the IED-OS starts supporting session hand-overs from a user
+  > web browser to an external application.)
 
-5. Navigate your browser to port HTTP 5001 on your IED:
-   `http://`_ied-ip-address_`:5001` (please make sure to use `http:` and **not**
-   `https:`). You should now see the "Edgeshark" user interface.
+5. Click on or touch the Edgeshark app tile in the IED user interface, or
+   navigate your browser directly to `https://`_ied-address_`/edgeshark/`. You
+   should now see the "Edgeshark" user interface.
 
-   > [!NOTE] You can use the remote access and then click on or touch the
-   > Edgeshark app tile in the IED user interface. However, you cannot use
-   > remote access to start remote captures (due to the aforementioned IED-OS
-   > limitation).
+   > [!NOTE] Edgeshark doesn't expose port 5001 on IEDs anymore; please use the
+   > IED's reverse proxy instead.
 
 <!-- tabs:end -->
 
 Please see [Getting around](getting-around) for a tour of the user interface.
 
-Deploying Edgeshark creates the two services named packetflix and gostwire, and
-expose **port 5001** on the host as shown below. Please note that access via the
-Industrial Edge device reverse proxy is specific to this platform. 
+Deploying Edgeshark creates the two services named packetflix and gostwire. On
+Docker hosts, packetflix is exposed at **port 5001** on the host. On Industrial
+Edge devices, packetflix is instead only reachable via the device's reverse
+proxy at `/edgeshark/`, as shown below.
 
 ```mermaid
 flowchart TB
     proxyport((":443/edgeshark"))
-    hostport((":5001"))
 
     subgraph ied["IED"]
         subgraph edgeshark["Edgeshark"]
@@ -143,7 +143,6 @@ flowchart TB
         rp["reverse proxy"]
     end
 
-    hostport -. "«forwards»" .-> pfport
     proxyport --- rp
     rp -. "«forwards»" .-> pfport
 ```

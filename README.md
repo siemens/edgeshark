@@ -94,6 +94,11 @@ are two different IE apps:
 3. import the `edgeshark-<version>-<arch>.app` file into the catalog of your IEM.
 4. deploy ... and enjoy!
 
+The Edgeshark app doesn't expose port 5001 on IEDs. Instead, open it via its app
+tile in the IED user interface, or at `https://<ied-address>/edgeshark/`. To
+allow starting captures from the UI and from Wireshark, this reverse proxy route
+does **not require an IED login**.
+
 If you want to live capture traffic using Wireshark, please [download the csharg
 extcap plugin](https://github.com/siemens/cshargextcap/releases) for the
 OS/distribution and install it. Please also check the [cshargextcap installation

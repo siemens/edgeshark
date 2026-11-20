@@ -69,4 +69,20 @@ overridden from
 and its app repository directory is renamed from `edgeshark` to
 `edgeshark-arm64`. Never change the `appId`s of already released apps.
 
+### Reverse proxy route
+
+The IE app doesn't publish packetflix's port 5001; it is only reachable via the
+IED's reverse proxy at `/edgeshark/`, as configured in
+[`nginx.json`](deployments/industrial-edge/app/edgeshark/nginx/nginx.json) with
+`"isSecureRedirection": false`, so that no IED login is required. Keep in mind:
+
+* `isSecureRedirection` only takes effect if the route's `headers` is valid
+  JSON. However, valid JSON `headers` replace the IED's default proxy
+  directives, so `headers` restates them, including `proxy_http_version 1.1`
+  and the `Upgrade`/`Connection` headers that packetflix's capture WebSockets
+  need.
+* `X-Forwarded-Prefix` must be set to `/edgeshark`, as otherwise the UI's base
+  URL (and thus its capture links) picks up the query string the IED UI appends
+  when opening the app.
+
 ## Thank you!

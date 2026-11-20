@@ -3,12 +3,10 @@
 You can easily start [Wireshark](https://www.wireshark.org/) live capture
 session from Edgeshark's web UI.
 
-> [!ATTENTION] Siemens Industrial Edge users: you **must access** the Edgeshark
-> user interface on port `:5001` in order to successfully start captures from
-> the UI. Attempting to start captures when accessing the user interface via an
-> IED's reverse proxy at port `:443` will fail with authentication failures.
-> Unfortunately, this cannot be fixed without proper IED support for session
-> hand-overs.
+> [!NOTE] Siemens Industrial Edge users: captures can be started from the UI
+> when accessing it via the IED's reverse proxy at
+> `https://`_ied-address_`/edgeshark/`, such as when clicking on the Edgeshark
+> app tile in the IED user interface.
 
 ## One-Click Capture
 

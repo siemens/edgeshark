@@ -21,7 +21,8 @@ requests are now handled concurrently.
 ### Packetflix
 
 Packetflix is the packet capture streaming service that is exposed at port 5001
-and also acts as the official service entry point. ([Packetflix
+(or via the reverse proxy at `/edgeshark/` on Industrial Edge devices) and also
+acts as the official service entry point. ([Packetflix
 Repository](https://github.com/siemens/packetflix)):
 
 - the specific capture API requests are processed in the Packetflix service

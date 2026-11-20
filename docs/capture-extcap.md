@@ -33,20 +33,19 @@ This brings up the capture dialog.
 
 To start your capture…
 
-2. enter the http(!) URL with the DNS name/IP address of your Industrial Edge
-   Device and port `5001`, such as `http://myied.my-company.com:5001`.
-   Do **not use https://**.
+2. enter the URL of the Edgeshark app on your Industrial Edge Device, using its
+   DNS name/IP address and the reverse proxy path `/edgeshark`, such as
+   `https://myied.my-company.com/edgeshark`.
 3. click or tap the refresh button right to the "Containers" selection.
 4. select the container you want to capture from.
 5. click or tap the "Start" button to start the capture (unless you need special
    proxy settings in which case you should have a look at the "Proxy" tab
    first).
 
-> [!NOTE] If you get an error after some time for failed authentication or
-> failed certificate verification you most probably have used "https:" instead
-> of "http:". It's not possible at this time to use the reverse proxy of IEDs
-> for live capture. Checking "Skip server certificate validation" will not help,
-> as the authentication with the reverse proxy then will fail.
+> [!NOTE] If you get an error after some time for failed certificate
+> verification, your IED most probably uses a certificate your desktop system
+> doesn't trust. Either make your system trust the IED's certificate, or check
+> "Skip server certificate validation".
 
 <!-- -->
 > [!NOTE] On purpose, there's no automatic refresh because otherwise a
