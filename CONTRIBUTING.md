@@ -45,12 +45,14 @@ and `arm64` and publishes them as a GitHub release, as
 pre-release suffix, such as `vX.Y.Z-rc.1`, are published as pre-releases. App
 versions follow this scheme:
 
-* `X.Y` is the major.minor version of the ghostwire image in
+* `X.Y` is at least the major.minor version of the ghostwire image in
   [`deployments/industrial-edge/app/edgeshark/docker-compose.yml`](deployments/industrial-edge/app/edgeshark/docker-compose.yml);
-  the release workflow fails otherwise.
+  the release workflow fails otherwise. `X.Y` usually follows ghostwire, but
+  may run ahead of it for app deployment changes without a new ghostwire
+  release.
 * `Z` counts app revisions within `X.Y`: bump it for any change, such as a
-  ghostwire patch release, a packetflix update, or deployment changes. Reset it
-  to 0 when ghostwire's major or minor version changes.
+  ghostwire patch release, a packetflix update, or deployment fixes. Reset it
+  to 0 when `X.Y` changes.
 
 The exact ghostwire and packetflix versions are automatically listed in the
 release notes. To add further release notes, use an annotated tag, for instance:
