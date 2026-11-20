@@ -45,12 +45,14 @@ and `arm64` and publishes them as a GitHub release, as
 pre-release suffix, such as `vX.Y.Z-rc.1`, are published as pre-releases. App
 versions follow this scheme:
 
-* `X.Y` is the major.minor version of the ghostwire image in
+* `X.Y` is at least the major.minor version of the ghostwire image in
   [`deployments/industrial-edge/app/edgeshark/docker-compose.yml`](deployments/industrial-edge/app/edgeshark/docker-compose.yml);
-  the release workflow fails otherwise.
+  the release workflow fails otherwise. `X.Y` usually follows ghostwire, but
+  may run ahead of it for app deployment changes without a new ghostwire
+  release.
 * `Z` counts app revisions within `X.Y`: bump it for any change, such as a
-  ghostwire patch release, a packetflix update, or deployment changes. Reset it
-  to 0 when ghostwire's major or minor version changes.
+  ghostwire patch release, a packetflix update, or deployment fixes. Reset it
+  to 0 when `X.Y` changes.
 
 The exact ghostwire and packetflix versions are automatically listed in the
 release notes. To add further release notes, use an annotated tag, for instance:
@@ -68,5 +70,21 @@ overridden from
 [`deployments/industrial-edge/app-arm64/detail.arm64.json`](deployments/industrial-edge/app-arm64/detail.arm64.json),
 and its app repository directory is renamed from `edgeshark` to
 `edgeshark-arm64`. Never change the `appId`s of already released apps.
+
+### Reverse proxy route
+
+The IE app doesn't publish packetflix's port 5001; it is only reachable via the
+IED's reverse proxy at `/edgeshark/`, as configured in
+[`nginx.json`](deployments/industrial-edge/app/edgeshark/nginx/nginx.json) with
+`"isSecureRedirection": false`, so that no IED login is required. Keep in mind:
+
+* `isSecureRedirection` only takes effect if the route's `headers` is valid
+  JSON. However, valid JSON `headers` replace the IED's default proxy
+  directives, so `headers` restates them, including `proxy_http_version 1.1`
+  and the `Upgrade`/`Connection` headers that packetflix's capture WebSockets
+  need.
+* `X-Forwarded-Prefix` must be set to `/edgeshark`, as otherwise the UI's base
+  URL (and thus its capture links) picks up the query string the IED UI appends
+  when opening the app.
 
 ## Thank you!

@@ -50,8 +50,12 @@ jobs:
             echo "::error::invalid app version tag \"$TAG\""
             exit 1
           fi
-          if [[ "${BASH_REMATCH[1]}.${BASH_REMATCH[2]}" != "${gw%.*}" ]]; then
-            echo "::error::app version ${TAG#v} must match ghostwire $gw major.minor ${gw%.*}"
+          # The app's major.minor may run ahead of ghostwire's, such as for
+          # deployment-only changes, but must never fall behind.
+          app_major=${BASH_REMATCH[1]} app_minor=${BASH_REMATCH[2]}
+          IFS=. read -r gw_major gw_minor _ <<< "$gw"
+          if (( 10#$app_major < 10#$gw_major || (10#$app_major == 10#$gw_major && 10#$app_minor < 10#$gw_minor) )); then
+            echo "::error::app version ${TAG#v} must be at least ghostwire $gw major.minor ${gw%.*}"
             exit 1
           fi
 

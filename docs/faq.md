@@ -3,11 +3,12 @@
 
 ### Error by extcap pipe
 
-This error is usually triggered when trying to start a capture from Edgeshark's
-UI while accessing it via an IED's _reverse proxy_.
+This error is usually triggered by Edgeshark app versions before 2.9.0 when
+trying to start a capture from Edgeshark's UI while accessing it via an IED's
+_reverse proxy_.
 
-> [!ATTENTION] Please access Edgeshark's UI directly via port 5001 of an IED,
-> instead of using the reverse proxy at port 443.
+> [!ATTENTION] Please update to the latest Edgeshark app, which supports
+> captures via the IED's reverse proxy at `https://`_ied-address_`/edgeshark/`.
 
 ### Exposed host ports
 

@@ -1,1 +1,12 @@
-{"edgeshark":[{"name":"edgeshark","protocol":"HTTP","port":"5001","headers":"","rewriteTarget":"/"}]}
+{
+  "edgeshark": [
+    {
+      "name": "edgeshark",
+      "protocol": "HTTP",
+      "port": "5001",
+      "headers": "{\"proxy_http_version\":\"1.1\",\"proxy_set_header Upgrade\":\"$http_upgrade\",\"proxy_set_header Connection\":\"upgrade\",\"proxy_set_header X-Forwarded-Server\":\"$host\",\"proxy_set_header X-Forwarded-Port\":\"$server_port\",\"proxy_set_header X-Forwarded-Uri\":\"$request_uri\",\"proxy_set_header X-Forwarded-Prefix\":\"/edgeshark\"}",
+      "rewriteTarget": "/",
+      "isSecureRedirection": false
+    }
+  ]
+}

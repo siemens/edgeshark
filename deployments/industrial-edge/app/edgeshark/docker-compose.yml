@@ -50,8 +50,9 @@ services:
       - '--discovery-service=gostwire.ghost-in-da-edge'
       - '--gw-port=5000'
       - '--proxy-discovery'
-    ports:
-      - '5001:5001'
+    # No published port on purpose: only the reverse proxy reaches this
+    # service at /edgeshark/; the IE runtime connects it to the proxy-redirect
+    # network because of its nginx.json route.
     user: '65534'
     cap_drop:
       - ALL
